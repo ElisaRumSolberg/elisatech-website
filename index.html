@@ -1033,7 +1033,7 @@
         </div>
       </div>
 
-     <form class="contact-form" action="https://formspree.io/f/xlgaggyk" method="POST" onsubmit="handleSubmit(event)">
+     <form class="contact-form" action="https://formspree.io/f/xlgaggyk" method="POST" onsubmit="handleSubmit(event)" data-redirect="false"></form>
   <div class="form-row">
     <div class="form-field">
       <label class="form-label" data-i18n="form_name">Your Name</label>
@@ -1347,19 +1347,30 @@
     sendBtn.addEventListener('click', sendMessage);
     input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
 
-   function handleSubmit(e) {
-  const btn = e.target.querySelector('.form-submit');
-  const successMsg = { 
-    en: "✓ Request received — I'll be in touch within 24h", 
-    no: "✓ Mottatt — jeg tar kontakt innen 24 timer", 
-    tr: "✓ Alındı — 24 saat içinde iletişime geçeceğim" 
-  };
-  setTimeout(() => {
-    btn.textContent = successMsg[currentLang] || successMsg.en;
-    btn.style.background = '#22c55e';
-    btn.style.color = '#fff';
-    btn.disabled = true;
-  }, 500);
+  function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      const successMsg = {
+        en: "✓ Request received — I'll be in touch within 24h",
+        no: "✓ Mottatt — jeg tar kontakt innen 24 timer",
+        tr: "✓ Alındı — 24 saat içinde iletişime geçeceğim"
+      };
+      btn.textContent = successMsg[currentLang] || successMsg.en;
+      btn.style.background = '#22c55e';
+      btn.style.color = '#fff';
+      btn.disabled = true;
+      form.reset();
+    }
+  });
 }
   </script>
 </body>
