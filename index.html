@@ -1339,15 +1339,20 @@
     sendBtn.addEventListener('click', sendMessage);
     input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
 
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      const successMsg = { en: "✓ Request received — I'll be in touch within 24h", no: "✓ Mottatt — jeg tar kontakt innen 24 timer", tr: "✓ Alındı — 24 saat içinde iletişime geçeceğim" };
-      btn.textContent = successMsg[currentLang] || successMsg.en;
-      btn.style.background = '#22c55e';
-      btn.style.color = '#fff';
-      btn.disabled = true;
-    }
+   function handleSubmit(e) {
+  const btn = e.target.querySelector('.form-submit');
+  const successMsg = { 
+    en: "✓ Request received — I'll be in touch within 24h", 
+    no: "✓ Mottatt — jeg tar kontakt innen 24 timer", 
+    tr: "✓ Alındı — 24 saat içinde iletişime geçeceğim" 
+  };
+  setTimeout(() => {
+    btn.textContent = successMsg[currentLang] || successMsg.en;
+    btn.style.background = '#22c55e';
+    btn.style.color = '#fff';
+    btn.disabled = true;
+  }, 500);
+}
   </script>
 </body>
 </html>
