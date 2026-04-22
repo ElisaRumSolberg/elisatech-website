@@ -1033,35 +1033,35 @@
         </div>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/xlgaggyk" method="POST" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-field">
-            <label class="form-label" data-i18n="form_name">Your Name</label>
-            <input class="form-input" type="text" placeholder="Anna Hansen" required />
-          </div>
-          <div class="form-field">
-            <label class="form-label" data-i18n="form_email">Email</label>
-            <input class="form-input" type="email" placeholder="anna@company.no" required />
-          </div>
-        </div>
-        <div class="form-field">
-          <label class="form-label" data-i18n="form_industry">Business Type</label>
-          <select class="form-select form-input">
-            <option value="" data-i18n="form_select">Select industry...</option>
-            <option>Restaurant / Café</option>
-            <option>Clinic / Healthcare</option>
-            <option>Real Estate</option>
-            <option>E-commerce</option>
-            <option>Consulting / Agency</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label class="form-label" data-i18n="form_need">What do you need?</label>
-          <textarea class="form-textarea" data-i18n-placeholder="form_placeholder" placeholder="Describe your situation briefly..."></textarea>
-        </div>
-        <button type="submit" class="form-submit" data-i18n="form_submit">Request Free Demo →</button>
-      </form>
+     <form class="contact-form" action="https://formspree.io/f/xlgaggyk" method="POST" onsubmit="handleSubmit(event)">
+  <div class="form-row">
+    <div class="form-field">
+      <label class="form-label" data-i18n="form_name">Your Name</label>
+      <input class="form-input" type="text" name="name" placeholder="Anna Hansen" required />
+    </div>
+    <div class="form-field">
+      <label class="form-label" data-i18n="form_email">Email</label>
+      <input class="form-input" type="email" name="email" placeholder="anna@company.no" required />
+    </div>
+  </div>
+  <div class="form-field">
+    <label class="form-label" data-i18n="form_industry">Business Type</label>
+    <select class="form-select form-input" name="industry">
+      <option value="" data-i18n="form_select">Select industry...</option>
+      <option data-i18n="industry_1">Restaurant / Café</option>
+      <option data-i18n="industry_2">Clinic / Healthcare</option>
+      <option data-i18n="industry_3">Real Estate</option>
+      <option data-i18n="industry_4">E-commerce</option>
+      <option data-i18n="industry_5">Consulting / Agency</option>
+      <option data-i18n="industry_6">Other</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label class="form-label" data-i18n="form_need">What do you need?</label>
+    <textarea class="form-textarea" name="message" placeholder="Describe your situation briefly..."></textarea>
+  </div>
+  <button type="submit" class="form-submit" data-i18n="form_submit">Request Free Demo →</button>
+</form>
     </div>
   </section>
 
@@ -1072,8 +1072,7 @@
   </footer>
 
   <script>
-    // ── TRANSLATIONS ──
-    const i18n = {
+   const i18n = {
       en: {
         nav_services: "Services", nav_cases: "Case Studies", nav_demo: "Live Demo",
         nav_contact: "Contact", nav_cta: "Get a Free Demo",
@@ -1119,6 +1118,9 @@
         form_placeholder: "Describe your situation briefly...", form_submit: "Request Free Demo →",
         bot_welcome: "Hi there 👋 I'm here to help you find the right AI solution for your business. Are you looking for a chatbot, lead generation, or email automation?",
         chat_placeholder: "Type a message...",
+        industry_1: "Restaurant / Café", industry_2: "Clinic / Healthcare",
+        industry_3: "Real Estate", industry_4: "E-commerce",
+        industry_5: "Consulting / Agency", industry_6: "Other",
       },
       no: {
         nav_services: "Tjenester", nav_cases: "Casestudier", nav_demo: "Live Demo",
@@ -1165,6 +1167,9 @@
         form_placeholder: "Beskriv situasjonen din kort...", form_submit: "Be om gratis demo →",
         bot_welcome: "Hei! 👋 Jeg er her for å hjelpe deg finne riktig AI-løsning for bedriften din. Leter du etter en chatbot, leadgenerering eller e-postautomatisering?",
         chat_placeholder: "Skriv en melding...",
+        industry_1: "Restaurant / Kafé", industry_2: "Klinikk / Helse",
+        industry_3: "Eiendom", industry_4: "E-handel",
+        industry_5: "Konsulent / Byrå", industry_6: "Annet",
       },
       tr: {
         nav_services: "Hizmetler", nav_cases: "Örnek Projeler", nav_demo: "Canlı Demo",
@@ -1211,9 +1216,11 @@
         form_placeholder: "Durumunuzu kısaca anlatın...", form_submit: "Ücretsiz Demo İste →",
         bot_welcome: "Merhaba! 👋 İşletmeniz için doğru AI çözümünü bulmak için buradayım. Chatbot, lead generation veya e-posta otomasyonu mu arıyorsunuz?",
         chat_placeholder: "Bir mesaj yazın...",
+        industry_1: "Restoran / Kafe", industry_2: "Klinik / Sağlık",
+        industry_3: "Gayrimenkul", industry_4: "E-ticaret",
+        industry_5: "Danışmanlık / Ajans", industry_6: "Diğer",
       }
     };
-
     let currentLang = 'en';
 
     function setLang(lang) {
@@ -1274,6 +1281,7 @@
         { keywords: ['hello', 'hi', 'hey', 'hei', 'hallo', 'merhaba', 'selam'], reply: "Hey! 👋 Great to meet you. Are you a business owner looking to automate something, or just exploring what AI can do?" },
         { keywords: ['norway', 'norwegian', 'bergen', 'norsk'], reply: "Jeg jobber også med norske bedrifter! 🇳🇴 Chatbots can be set up fully in Norwegian. What kind of business are you running?" },
         { keywords: ['turkey', 'turkish', 'türkiye', 'türk'], reply: "Türkiye'deki işletmelerle de çalışıyorum! 🇹🇷 Tüm sistem Türkçe kurulabilir. Ne tür bir işletmeniz var?" },
+        
       ],
       no: [
         { keywords: ['chatbot', 'bot', 'chat'], reply: "Godt valg! En chatbot kan håndtere kundespørsmål 24/7 og fange opp leads automatisk. Hvilken type bedrift har du?" },
