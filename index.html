@@ -10,7 +10,6 @@
   <meta property="og:url" content="https://elisatech.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBR4458X7Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,255 +17,57 @@
     gtag('js', new Date());
     gtag('config', 'G-JBR4458X7Q');
   </script>
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #080808;
-      --surface: #111111;
-      --surface2: #181818;
-      --border: #242424;
-      --white: #f5f5f0;
-      --muted: #8a8a8a;
-      --accent: #c8f060;
-      --accent2: #6366f1;
-      --mono: 'DM Mono', monospace;
-      --serif: 'DM Serif Display', serif;
-      --sans: 'DM Sans', sans-serif;
+      --black: #080808; --surface: #111111; --surface2: #181818;
+      --border: #242424; --white: #f5f5f0; --muted: #8a8a8a;
+      --accent: #c8f060; --accent2: #6366f1;
+      --mono: 'DM Mono', monospace; --serif: 'DM Serif Display', serif; --sans: 'DM Sans', sans-serif;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 999;
-      opacity: 0.4;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.5rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, background 0.3s;
-    }
-    nav.scrolled {
-      background: rgba(8,8,8,0.92);
-      backdrop-filter: blur(12px);
-      border-color: var(--border);
-    }
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      color: var(--white);
-      text-decoration: none;
-    }
+    body { background: var(--black); color: var(--white); font-family: var(--sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; opacity: 0.4; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 4rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
+    nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); border-color: var(--border); }
+    .nav-logo { font-family: var(--mono); font-size: 0.85rem; letter-spacing: 0.1em; color: var(--white); text-decoration: none; }
     .nav-logo span { color: var(--accent); }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--white); }
-
-    .lang-toggle {
-      display: flex;
-      gap: 0.4rem;
-      align-items: center;
-      margin-right: 1.5rem;
-    }
-    .lang-btn {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.06em;
-      padding: 0.3rem 0.6rem;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(200,240,96,0.06);
-    }
+    .lang-toggle { display: flex; gap: 0.4rem; align-items: center; margin-right: 1.5rem; }
+    .lang-btn { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.06em; padding: 0.3rem 0.6rem; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .lang-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(200,240,96,0.06); }
     .lang-btn:hover:not(.active) { border-color: var(--white); color: var(--white); }
-
     .nav-right { display: flex; align-items: center; }
-    .nav-cta {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      padding: 0.6rem 1.4rem;
-      border: 1px solid var(--border);
-      color: var(--white);
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
+    .nav-cta { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.6rem 1.4rem; border: 1px solid var(--border); color: var(--white); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 80px 80px;
-      opacity: 0.3;
-      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
-    }
-    .hero-glow {
-      position: absolute;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
-      top: 50%; left: 60%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-    .hero-tag {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      animation: fadeUp 0.8s ease both;
-    }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 4rem; position: relative; overflow: hidden; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.3; mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%); }
+    .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%); top: 50%; left: 60%; transform: translate(-50%, -50%); pointer-events: none; }
+    .hero-tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem; animation: fadeUp 0.8s ease both; }
     .hero-tag::before { content: ''; width: 2rem; height: 1px; background: var(--accent); }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      line-height: 1.05;
-      font-weight: 400;
-      max-width: 18ch;
-      animation: fadeUp 0.8s 0.15s ease both;
-    }
+    .hero h1 { font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.05; font-weight: 400; max-width: 18ch; animation: fadeUp 0.8s 0.15s ease both; }
     .hero h1 em { font-style: italic; color: var(--accent); }
-    .hero-sub {
-      margin-top: 2rem;
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 48ch;
-      font-weight: 300;
-      animation: fadeUp 0.8s 0.3s ease both;
-    }
-    .hero-actions {
-      margin-top: 3rem;
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      animation: fadeUp 0.8s 0.45s ease both;
-    }
-    .btn-primary {
-      padding: 0.9rem 2rem;
-      background: var(--accent);
-      color: var(--black);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
+    .hero-sub { margin-top: 2rem; font-size: 1.05rem; color: var(--muted); max-width: 48ch; font-weight: 300; animation: fadeUp 0.8s 0.3s ease both; }
+    .hero-actions { margin-top: 3rem; display: flex; gap: 1rem; align-items: center; animation: fadeUp 0.8s 0.45s ease both; }
+    .btn-primary { padding: 0.9rem 2rem; background: var(--accent); color: var(--black); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-decoration: none; font-weight: 500; transition: opacity 0.2s; }
     .btn-primary:hover { opacity: 0.85; }
-    .btn-ghost {
-      padding: 0.9rem 2rem;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
+    .btn-ghost { padding: 0.9rem 2rem; border: 1px solid var(--border); color: var(--muted); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .btn-ghost:hover { border-color: var(--white); color: var(--white); }
-    .hero-stats {
-      position: absolute;
-      bottom: 4rem;
-      right: 4rem;
-      display: flex;
-      gap: 3rem;
-      animation: fadeUp 0.8s 0.6s ease both;
-    }
+    .hero-stats { position: absolute; bottom: 4rem; right: 4rem; display: flex; gap: 3rem; animation: fadeUp 0.8s 0.6s ease both; }
     .stat-item { text-align: right; }
     .stat-num { font-family: var(--serif); font-size: 2rem; color: var(--white); display: block; }
     .stat-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
-
-    /* ── TRUST BAR ── */
-    .trust-bar {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 4rem;
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-      background: var(--surface);
-      overflow-x: auto;
-    }
+    .trust-bar { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem 4rem; display: flex; gap: 3rem; align-items: center; background: var(--surface); overflow-x: auto; }
     .trust-item { display: flex; align-items: center; gap: 0.6rem; white-space: nowrap; flex-shrink: 0; }
     .trust-item span { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--muted); }
     .trust-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
-
-    /* ── SECTIONS ── */
     section { padding: 7rem 4rem; }
-    .section-tag {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+    .section-tag { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
     .section-tag::before { content: ''; width: 1.5rem; height: 1px; background: var(--accent); }
     .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.1; max-width: 22ch; }
     .section-title em { font-style: italic; color: var(--accent); }
-
-    /* ── WHAT I SOLVE ── */
     .solve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 4rem; border: 1px solid var(--border); }
     .solve-item { padding: 2.5rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.3s; }
     .solve-item:hover { background: var(--surface); }
@@ -274,8 +75,6 @@
     .solve-num { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 1rem; }
     .solve-item h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
     .solve-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-
-    /* ── SERVICES ── */
     #services { background: var(--surface); }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 4rem; background: var(--border); }
     .service-card { background: var(--surface); padding: 3rem 2.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
@@ -290,8 +89,6 @@
     .service-features { list-style: none; margin-top: 1.5rem; }
     .service-features li { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; align-items: center; }
     .service-features li::before { content: '→'; color: var(--accent); }
-
-    /* ── CASE STUDIES ── */
     .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
     .case-card { border: 1px solid var(--border); padding: 2.5rem; position: relative; transition: border-color 0.3s; }
     .case-card:hover { border-color: var(--accent2); }
@@ -299,8 +96,6 @@
     .case-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; }
     .case-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
     .case-result { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); padding-top: 1.5rem; border-top: 1px solid var(--border); }
-
-    /* ── DEMO ── */
     #demo { background: var(--surface); }
     .demo-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; margin-top: 4rem; align-items: start; }
     .demo-info h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; }
@@ -309,8 +104,6 @@
     .demo-steps li { display: flex; gap: 1rem; align-items: flex-start; }
     .step-num { font-family: var(--mono); font-size: 0.65rem; color: var(--accent); background: rgba(200,240,96,0.08); padding: 0.2rem 0.5rem; flex-shrink: 0; margin-top: 0.1rem; }
     .demo-steps p { font-size: 0.85rem; color: var(--muted); margin: 0; }
-
-    /* ── CHATBOT WIDGET ── */
     .chat-widget { border: 1px solid var(--border); background: var(--black); display: flex; flex-direction: column; height: 520px; overflow: hidden; }
     .chat-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem; }
     .chat-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
@@ -335,8 +128,6 @@
     .chat-input::placeholder { color: var(--muted); }
     .chat-send { padding: 0.7rem 1.2rem; background: var(--accent); color: var(--black); border: none; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; cursor: pointer; transition: opacity 0.2s; }
     .chat-send:hover { opacity: 0.85; }
-
-    /* ── CONTACT ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; margin-top: 4rem; align-items: start; }
     .contact-info h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; }
     .contact-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
@@ -354,25 +145,19 @@
     .form-textarea { resize: vertical; min-height: 100px; }
     .form-submit { padding: 1rem; background: var(--accent); color: var(--black); border: none; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.2s; text-transform: uppercase; }
     .form-submit:hover { opacity: 0.85; }
-
-    /* ── FOOTER ── */
     footer { border-top: 1px solid var(--border); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; }
     .footer-logo { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); }
     .footer-logo span { color: var(--accent); }
     .footer-copy { font-family: var(--mono); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; }
     .divider { width: 100%; height: 1px; background: var(--border); }
-
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
     @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
     [data-lang] { display: none; }
     [data-lang].lang-active { display: block; }
     span[data-lang].lang-active { display: inline; }
-
     @media (max-width: 900px) {
       nav { padding: 1.25rem 1.5rem; }
       .nav-links { display: none; }
@@ -388,7 +173,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="navbar">
     <a href="#" class="nav-logo">elisa<span>tech</span></a>
     <ul class="nav-links">
@@ -407,7 +191,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
@@ -415,9 +198,9 @@
     <h1 class="lang-active" data-lang="en">While you sleep, <em>your business runs.</em></h1>
     <h1 data-lang="no">Mens du sover, <em>jobber systemet.</em></h1>
     <h1 data-lang="tr">Siz uyurken, <em>işiniz çalışır.</em></h1>
-    <p class="hero-sub" data-lang="en" style="display:block">I build AI chatbots and automation systems that capture leads, answer customers, and run workflows — 24/7, without you lifting a finger. Based in Bergen, serving businesses in Norway, Turkey, and worldwide.</p>
-    <p class="hero-sub" data-lang="no">Jeg bygger AI-chatboter og automatiseringssystemer som fanger opp leads, svarer kunder og kjører arbeidsflyter — 24/7, uten at du trenger å løfte en finger. Basert i Bergen.</p>
-    <p class="hero-sub" data-lang="tr">Potansiyel müşteri yakalayan, soruları yanıtlayan ve iş akışlarını yürüten AI sistemleri kuruyorum — 7/24, parmak kaldırmadan. Bergen merkezli, Norveç · Türkiye · Dünya geneli hizmet.</p>
+    <p class="hero-sub" data-lang="en" style="display:block">We build AI chatbots and automation systems that capture leads, answer customers, and run workflows — 24/7, without you lifting a finger. Serving businesses in Norway, Turkey, and worldwide.</p>
+    <p class="hero-sub" data-lang="no">Vi bygger AI-chatboter og automatiseringssystemer som fanger opp leads, svarer kunder og kjører arbeidsflyter — 24/7, uten at du trenger å løfte en finger. Vi betjener bedrifter i Norge, Tyrkia og verden over.</p>
+    <p class="hero-sub" data-lang="tr">Potansiyel müşteri yakalayan, soruları yanıtlayan ve iş akışlarını yürüten AI sistemleri kuruyoruz — 7/24, parmak kaldırmadan. Norveç, Türkiye ve dünya genelinde hizmet veriyoruz.</p>
     <div class="hero-actions">
       <a href="#demo" class="btn-primary" data-i18n="hero_cta1">See Live Demo</a>
       <a href="#services" class="btn-ghost" data-i18n="hero_cta2">View Services</a>
@@ -429,7 +212,6 @@
     </div>
   </section>
 
-  <!-- TRUST BAR -->
   <div class="trust-bar">
     <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust2">English · Norsk · Türkçe</span></div>
     <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust3">48h delivery on most projects</span></div>
@@ -437,21 +219,19 @@
     <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust5">Free consultation · No commitment</span></div>
   </div>
 
-  <!-- WHAT I SOLVE -->
   <section id="about">
-    <div class="section-tag" data-i18n="solve_tag">What I Solve</div>
+    <div class="section-tag" data-i18n="solve_tag">What We Solve</div>
     <h2 class="section-title" data-i18n="solve_title">Real problems. <em>Real results.</em></h2>
     <div class="solve-grid reveal">
-      <div class="solve-item"><div class="solve-num">01</div><h3 data-i18n="solve1_h">Missed leads</h3><p data-i18n="solve1_p">Visitors leave without a trace. A chatbot captures their name, need, and email — even at 2am.</p></div>
+      <div class="solve-item"><div class="solve-num">01</div><h3 data-i18n="solve1_h">Missed leads</h3><p data-i18n="solve1_p">Visitors leave without a trace. Our chatbot captures their name, need, and email — even at 2am.</p></div>
       <div class="solve-item"><div class="solve-num">02</div><h3 data-i18n="solve2_h">Repetitive support</h3><p data-i18n="solve2_p">Answering the same 10 questions every day. An AI trained on your business handles it instantly.</p></div>
-      <div class="solve-item"><div class="solve-num">03</div><h3 data-i18n="solve3_h">Manual follow-up</h3><p data-i18n="solve3_p">Leads go cold because there's no time. Automated sequences follow up for you, every time.</p></div>
-      <div class="solve-item"><div class="solve-num">04</div><h3 data-i18n="solve4_h">Disconnected tools</h3><p data-i18n="solve4_p">Your CRM, email, and calendar don't talk to each other. I connect them with intelligent automations.</p></div>
+      <div class="solve-item"><div class="solve-num">03</div><h3 data-i18n="solve3_h">Manual follow-up</h3><p data-i18n="solve3_p">Leads go cold because there's no time. Our automated sequences follow up for you, every time.</p></div>
+      <div class="solve-item"><div class="solve-num">04</div><h3 data-i18n="solve4_h">Disconnected tools</h3><p data-i18n="solve4_p">Your CRM, email, and calendar don't talk to each other. We connect them with intelligent automations.</p></div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="section-tag" data-i18n="services_tag">Services</div>
     <h2 class="section-title" data-i18n="services_title">Three systems. <em>One goal.</em></h2>
@@ -495,27 +275,26 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES -->
   <section id="cases">
     <div class="section-tag" data-i18n="cases_tag">Case Studies</div>
     <h2 class="section-title" data-i18n="cases_title">How it works <em>in practice.</em></h2>
     <div class="cases-grid reveal">
       <div class="case-card">
-        <div class="case-industry" data-i18n="case1_ind">Dental Clinic · Bergen</div>
+        <div class="case-industry" data-i18n="case1_ind">Dental Clinic · Norway</div>
         <h3 data-i18n="case1_h">Appointment bot handles after-hours bookings</h3>
-        <p data-i18n="case1_p">A Bergen dental clinic was losing bookings every evening. We deployed a chatbot that collects patient name, preferred time, and concern — and pushes it directly to their booking system. No more missed calls.</p>
+        <p data-i18n="case1_p">A dental clinic was losing bookings every evening. We deployed a chatbot that collects patient name, preferred time, and concern — pushed directly to their booking system. No more missed calls.</p>
         <div class="case-result" data-i18n="case1_r">→ 40h/month of manual booking eliminated</div>
       </div>
       <div class="case-card">
         <div class="case-industry" data-i18n="case2_ind">Restaurant · Istanbul</div>
         <h3 data-i18n="case2_h">AI handles 200+ weekly DMs in 3 languages</h3>
-        <p data-i18n="case2_p">An Istanbul restaurant was receiving hundreds of Instagram DMs daily — menu, hours, reservations. An AI trained on their menu now answers instantly in Turkish, English, and Arabic. Owner focuses on the kitchen.</p>
+        <p data-i18n="case2_p">An Istanbul restaurant was receiving hundreds of Instagram DMs daily. An AI trained on their menu now answers instantly in Turkish, English, and Arabic. Owner focuses on the kitchen.</p>
         <div class="case-result" data-i18n="case2_r">→ Response time: 4 hours → 12 seconds</div>
       </div>
       <div class="case-card">
         <div class="case-industry" data-i18n="case3_ind">Real Estate · Remote</div>
         <h3 data-i18n="case3_h">Lead pipeline built from website traffic</h3>
-        <p data-i18n="case3_p">A property agency had traffic but no way to capture intent. A lead-gen bot now asks qualifying questions, scores each lead by budget and timeline, and sends the agent a full profile — ready to call.</p>
+        <p data-i18n="case3_p">A property agency had traffic but no way to capture intent. Our lead-gen bot now asks qualifying questions, scores each lead by budget and timeline, and sends the agent a full profile — ready to call.</p>
         <div class="case-result" data-i18n="case3_r">→ 3x more qualified leads per month</div>
       </div>
     </div>
@@ -523,7 +302,6 @@
 
   <div class="divider"></div>
 
-  <!-- DEMO -->
   <section id="demo">
     <div class="section-tag" data-i18n="demo_tag">Live Demo</div>
     <h2 class="section-title" data-i18n="demo_title">Try it <em>right now.</em></h2>
@@ -550,7 +328,7 @@
         <div class="chat-messages" id="chatMessages">
           <div class="msg bot">
             <div class="msg-avatar">ET</div>
-            <div class="msg-bubble" id="botWelcome">Hi there 👋 I'm here to help you find the right AI solution for your business. Are you looking for a chatbot, lead generation, or email automation?</div>
+            <div class="msg-bubble" id="botWelcome">Hi there 👋 We're here to help you find the right AI solution for your business. Are you looking for a chatbot, lead generation, or email automation?</div>
           </div>
         </div>
         <div class="chat-input-area">
@@ -561,14 +339,13 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-tag" data-i18n="contact_tag">Contact</div>
     <h2 class="section-title" data-i18n="contact_title">Let's build <em>yours.</em></h2>
     <div class="contact-grid reveal">
       <div class="contact-info">
         <h3 data-i18n="contact_h3">Free consultation. No commitment.</h3>
-        <p data-i18n="contact_p">Tell me about your business and I'll show you exactly what an AI system would look like for you — live demo included.</p>
+        <p data-i18n="contact_p">Tell us about your business and we'll show you exactly what an AI system would look like for you — live demo included.</p>
         <div class="contact-detail">
           <div class="contact-row">
             <span class="contact-label">Email</span>
@@ -588,8 +365,6 @@
           </div>
         </div>
       </div>
-
-      <!-- ✅ FORM DÜZELTILDI — tüm alanlar form içinde -->
       <form class="contact-form" action="https://formspree.io/f/xlgaggyk" method="POST" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-field">
@@ -619,11 +394,9 @@
         </div>
         <button type="submit" class="form-submit" data-i18n="form_submit">Request Free Demo →</button>
       </form>
-
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">elisa<span>tech</span>.io</div>
     <div class="footer-copy">© 2025 ElisaTech · AI Systems for Small Business</div>
@@ -637,14 +410,14 @@
         hero_tag: "AI Systems for Small Business",
         hero_cta1: "See Live Demo", hero_cta2: "View Services",
         stat1: "Delivery", stat2: "Languages", stat3: "Uptime",
-        trust1: "English · Norsk · Türkçe", trust2: "English · Norsk · Türkçe",
+        trust2: "English · Norsk · Türkçe",
         trust3: "48h delivery on most projects", trust4: "Small business specialists",
         trust5: "Free consultation · No commitment",
-        solve_tag: "What I Solve", solve_title: "Real problems. Real results.",
-        solve1_h: "Missed leads", solve1_p: "Visitors leave without a trace. A chatbot captures their name, need, and email — even at 2am.",
+        solve_tag: "What We Solve", solve_title: "Real problems. Real results.",
+        solve1_h: "Missed leads", solve1_p: "Visitors leave without a trace. Our chatbot captures their name, need, and email — even at 2am.",
         solve2_h: "Repetitive support", solve2_p: "Answering the same 10 questions every day. An AI trained on your business handles it instantly.",
-        solve3_h: "Manual follow-up", solve3_p: "Leads go cold because there's no time. Automated sequences follow up for you, every time.",
-        solve4_h: "Disconnected tools", solve4_p: "Your CRM, email, and calendar don't talk to each other. I connect them with intelligent automations.",
+        solve3_h: "Manual follow-up", solve3_p: "Leads go cold because there's no time. Our automated sequences follow up for you, every time.",
+        solve4_h: "Disconnected tools", solve4_p: "Your CRM, email, and calendar don't talk to each other. We connect them with intelligent automations.",
         services_tag: "Services", services_title: "Three systems. One goal.",
         s1_title: "AI Chatbot Setup", s1_desc: "A custom chatbot trained on your business — products, FAQs, pricing. It qualifies leads and books calls automatically.",
         s1_f1: "Trained on your content", s1_f2: "Lead capture + email collection", s1_f3: "Connects to your CRM", s1_f4: "Deployed on your website in 48h",
@@ -654,12 +427,12 @@
         s3_f1: "AI-personalized email copy", s3_f2: "Trigger-based sequences", s3_f3: "Instagram DM automation", s3_f4: "A/B testing built-in",
         s_cta: "Request a Quote →",
         cases_tag: "Case Studies", cases_title: "How it works in practice.",
-        case1_ind: "Dental Clinic · Bergen", case1_h: "Appointment bot handles after-hours bookings",
-        case1_p: "A Bergen dental clinic was losing bookings every evening. We deployed a chatbot that collects patient name, preferred time, and concern — pushed directly to their booking system.", case1_r: "→ 40h/month of manual booking eliminated",
+        case1_ind: "Dental Clinic · Norway", case1_h: "Appointment bot handles after-hours bookings",
+        case1_p: "A dental clinic was losing bookings every evening. We deployed a chatbot that collects patient name, preferred time, and concern — pushed directly to their booking system.", case1_r: "→ 40h/month of manual booking eliminated",
         case2_ind: "Restaurant · Istanbul", case2_h: "AI handles 200+ weekly DMs in 3 languages",
         case2_p: "An Istanbul restaurant received hundreds of DMs daily. An AI trained on their menu now answers instantly in Turkish, English, and Arabic.", case2_r: "→ Response time: 4 hours → 12 seconds",
         case3_ind: "Real Estate · Remote", case3_h: "Lead pipeline built from website traffic",
-        case3_p: "A property agency had traffic but no leads. A bot now scores each visitor by budget and timeline, sending the agent a full profile ready to call.", case3_r: "→ 3x more qualified leads per month",
+        case3_p: "A property agency had traffic but no leads. Our bot now scores each visitor by budget and timeline, sending the agent a full profile ready to call.", case3_r: "→ 3x more qualified leads per month",
         demo_tag: "Live Demo", demo_title: "Try it right now.",
         demo_h3: "This is what your customers will experience.",
         demo_p1: "The bot below is a live example of a lead generation chatbot. It collects your name, business type, and need — then suggests the right solution.",
@@ -668,13 +441,13 @@
         demo_s3: "Collects email and sends data to your CRM", demo_s4: "You get an instant notification with full lead summary",
         contact_tag: "Contact", contact_title: "Let's build yours.",
         contact_h3: "Free consultation. No commitment.",
-        contact_p: "Tell me about your business and I'll show you exactly what an AI system would look like for you — live demo included.",
-        contact_l1: "Based in", contact_l2: "Response", contact_v2: "Within 24 hours",
+        contact_p: "Tell us about your business and we'll show you exactly what an AI system would look like for you — live demo included.",
+        contact_l2: "Response", contact_v2: "Within 24 hours",
         contact_l3: "Languages", contact_l4: "Delivery", contact_v4: "48–72 hours for most projects",
         form_name: "Your Name", form_email: "Email", form_industry: "Business Type",
         form_select: "Select industry...", form_need: "What do you need?",
-        form_placeholder: "Describe your situation briefly...", form_submit: "Request Free Demo →",
-        bot_welcome: "Hi there 👋 I'm here to help you find the right AI solution for your business. Are you looking for a chatbot, lead generation, or email automation?",
+        form_submit: "Request Free Demo →",
+        bot_welcome: "Hi there 👋 We're here to help you find the right AI solution for your business. Are you looking for a chatbot, lead generation, or email automation?",
         chat_placeholder: "Type a message...",
         industry_1: "Restaurant / Café", industry_2: "Clinic / Healthcare",
         industry_3: "Real Estate", industry_4: "E-commerce",
@@ -686,14 +459,14 @@
         hero_tag: "AI-systemer for småbedrifter",
         hero_cta1: "Se Live Demo", hero_cta2: "Tjenester",
         stat1: "Levering", stat2: "Språk", stat3: "Oppetid",
-        trust1: "Norsk · English · Türkçe", trust2: "Norsk · English · Türkçe",
+        trust2: "Norsk · English · Türkçe",
         trust3: "Levering innen 48 timer", trust4: "Spesialister på småbedrifter",
         trust5: "Gratis konsultasjon · Ingen forpliktelse",
-        solve_tag: "Hva jeg løser", solve_title: "Reelle problemer. Reelle resultater.",
-        solve1_h: "Tapte leads", solve1_p: "Besøkende forsvinner uten spor. En chatbot fanger opp navn, behov og e-post — selv klokka 2 om natten.",
+        solve_tag: "Hva vi løser", solve_title: "Reelle problemer. Reelle resultater.",
+        solve1_h: "Tapte leads", solve1_p: "Besøkende forsvinner uten spor. Vår chatbot fanger opp navn, behov og e-post — selv klokka 2 om natten.",
         solve2_h: "Repetitiv kundestøtte", solve2_p: "Du svarer på de samme 10 spørsmålene hver dag. En AI trent på din bedrift håndterer det umiddelbart.",
-        solve3_h: "Manuell oppfølging", solve3_p: "Leads blir kalde fordi det ikke er tid. Automatiserte sekvenser følger opp for deg, hver gang.",
-        solve4_h: "Uforbundne verktøy", solve4_p: "CRM, e-post og kalender snakker ikke med hverandre. Jeg kobler dem med intelligente automatiseringer.",
+        solve3_h: "Manuell oppfølging", solve3_p: "Leads blir kalde fordi det ikke er tid. Våre automatiserte sekvenser følger opp for deg, hver gang.",
+        solve4_h: "Uforbundne verktøy", solve4_p: "CRM, e-post og kalender snakker ikke med hverandre. Vi kobler dem med intelligente automatiseringer.",
         services_tag: "Tjenester", services_title: "Tre systemer. Ett mål.",
         s1_title: "AI Chatbot-oppsett", s1_desc: "En tilpasset chatbot trent på din bedrift — produkter, FAQ, priser. Den kvalifiserer leads og booker samtaler automatisk.",
         s1_f1: "Trent på ditt innhold", s1_f2: "Lead-fangst + e-postinnsamling", s1_f3: "Kobles til ditt CRM", s1_f4: "Live på nettstedet ditt innen 48 timer",
@@ -703,12 +476,12 @@
         s3_f1: "AI-personalisert e-posttekst", s3_f2: "Utløserbaserte sekvenser", s3_f3: "Instagram DM-automatisering", s3_f4: "Innebygd A/B-testing",
         s_cta: "Be om tilbud →",
         cases_tag: "Casestudier", cases_title: "Slik fungerer det i praksis.",
-        case1_ind: "Tannklinikk · Bergen", case1_h: "Chatbot håndterer bookinger etter stengetid",
-        case1_p: "En Bergen-tannklinikk mistet bookinger hver kveld. Vi lanserte en chatbot som samler pasientens navn, ønsket tid og bekymring — direkte til bookingsystemet.", case1_r: "→ 40 timer/mnd manuell booking eliminert",
+        case1_ind: "Tannklinikk · Norge", case1_h: "Chatbot håndterer bookinger etter stengetid",
+        case1_p: "En tannklinikk mistet bookinger hver kveld. Vi lanserte en chatbot som samler pasientens navn, ønsket tid og bekymring — direkte til bookingsystemet.", case1_r: "→ 40 timer/mnd manuell booking eliminert",
         case2_ind: "Restaurant · Istanbul", case2_h: "AI håndterer 200+ ukentlige DM-er på 3 språk",
         case2_p: "En Istanbul-restaurant mottok hundrevis av DM-er daglig. En AI trent på menyen svarer nå umiddelbart på tyrkisk, engelsk og arabisk.", case2_r: "→ Responstid: 4 timer → 12 sekunder",
         case3_ind: "Eiendom · Remote", case3_h: "Lead-pipeline bygget fra nettstedstrafikk",
-        case3_p: "Et eiendomsselskap hadde trafikk men ingen leads. En bot scorer nå hver besøkende etter budsjett og tidslinje og sender agenten en fullstendig profil.", case3_r: "→ 3x flere kvalifiserte leads per måned",
+        case3_p: "Et eiendomsselskap hadde trafikk men ingen leads. Vår bot scorer nå hver besøkende etter budsjett og tidslinje og sender agenten en fullstendig profil.", case3_r: "→ 3x flere kvalifiserte leads per måned",
         demo_tag: "Live Demo", demo_title: "Prøv det nå.",
         demo_h3: "Dette er hva kundene dine vil oppleve.",
         demo_p1: "Boten nedenfor er et live eksempel på en lead generation-chatbot. Den samler navn, bedriftstype og behov — og foreslår riktig løsning.",
@@ -717,13 +490,13 @@
         demo_s3: "Samler e-post og sender data til CRM", demo_s4: "Du får øyeblikkelig varsel med fullstendig lead-sammendrag",
         contact_tag: "Kontakt", contact_title: "La oss bygge din.",
         contact_h3: "Gratis konsultasjon. Ingen forpliktelse.",
-        contact_p: "Fortell meg om bedriften din, så viser jeg deg nøyaktig hva et AI-system vil se ut for deg — med live demo.",
-        contact_l1: "Basert i", contact_l2: "Respons", contact_v2: "Innen 24 timer",
+        contact_p: "Fortell oss om bedriften din, så viser vi deg nøyaktig hva et AI-system vil se ut for deg — med live demo.",
+        contact_l2: "Respons", contact_v2: "Innen 24 timer",
         contact_l3: "Språk", contact_l4: "Levering", contact_v4: "48–72 timer for de fleste prosjekter",
         form_name: "Navn", form_email: "E-post", form_industry: "Bransje",
         form_select: "Velg bransje...", form_need: "Hva trenger du?",
-        form_placeholder: "Beskriv situasjonen din kort...", form_submit: "Be om gratis demo →",
-        bot_welcome: "Hei! 👋 Jeg er her for å hjelpe deg finne riktig AI-løsning for bedriften din. Leter du etter en chatbot, leadgenerering eller e-postautomatisering?",
+        form_submit: "Be om gratis demo →",
+        bot_welcome: "Hei! 👋 Vi er her for å hjelpe deg finne riktig AI-løsning for bedriften din. Leter du etter en chatbot, leadgenerering eller e-postautomatisering?",
         chat_placeholder: "Skriv en melding...",
         industry_1: "Restaurant / Kafé", industry_2: "Klinikk / Helse",
         industry_3: "Eiendom", industry_4: "E-handel",
@@ -735,14 +508,14 @@
         hero_tag: "Küçük İşletmeler için AI Sistemleri",
         hero_cta1: "Canlı Demo Gör", hero_cta2: "Hizmetlere Bak",
         stat1: "Teslimat", stat2: "Dil", stat3: "Çalışma Süresi",
-        trust1: "Türkçe · English · Norsk", trust2: "Türkçe · English · Norsk",
+        trust2: "Türkçe · English · Norsk",
         trust3: "Çoğu projede 48 saat teslimat", trust4: "Küçük işletme uzmanı",
         trust5: "Ücretsiz danışmanlık · Taahhüt yok",
-        solve_tag: "Çözdüğüm Sorunlar", solve_title: "Gerçek sorunlar. Gerçek sonuçlar.",
-        solve1_h: "Kaçırılan müşteriler", solve1_p: "Ziyaretçiler iz bırakmadan gidiyor. Bir chatbot gece 2'de bile isim, ihtiyaç ve e-postayı yakalar.",
+        solve_tag: "Çözdüğümüz Sorunlar", solve_title: "Gerçek sorunlar. Gerçek sonuçlar.",
+        solve1_h: "Kaçırılan müşteriler", solve1_p: "Ziyaretçiler iz bırakmadan gidiyor. Chatbotumuz gece 2'de bile isim, ihtiyaç ve e-postayı yakalar.",
         solve2_h: "Tekrarlayan destek", solve2_p: "Her gün aynı 10 soruyu cevaplıyorsunuz. İşletmenize özel eğitilmiş AI bunu anında halleder.",
-        solve3_h: "Manuel takip", solve3_p: "Müşteri adayları soğuyor çünkü vakit yok. Otomatik diziler her seferinde sizin adınıza takip eder.",
-        solve4_h: "Bağlantısız araçlar", solve4_p: "CRM, e-posta ve takvim birbirleriyle konuşmuyor. Onları akıllı otomasyonlarla birleştiriyorum.",
+        solve3_h: "Manuel takip", solve3_p: "Müşteri adayları soğuyor çünkü vakit yok. Otomatik dizilerimiz her seferinde sizin adınıza takip eder.",
+        solve4_h: "Bağlantısız araçlar", solve4_p: "CRM, e-posta ve takvim birbirleriyle konuşmuyor. Onları akıllı otomasyonlarla birleştiriyoruz.",
         services_tag: "Hizmetler", services_title: "Üç sistem. Tek hedef.",
         s1_title: "AI Chatbot Kurulumu", s1_desc: "İşletmenize özel eğitilmiş chatbot — ürünler, SSS, fiyatlandırma. Müşteri adaylarını nitelendiriyor ve otomatik randevu alıyor.",
         s1_f1: "İçeriğinize göre eğitildi", s1_f2: "Müşteri adayı yakalama + e-posta toplama", s1_f3: "CRM'inize bağlanır", s1_f4: "48 saat içinde sitenizde canlı",
@@ -752,12 +525,12 @@
         s3_f1: "AI kişiselleştirilmiş e-posta metni", s3_f2: "Tetikleyici tabanlı diziler", s3_f3: "Instagram DM otomasyonu", s3_f4: "Dahili A/B testi",
         s_cta: "Teklif İste →",
         cases_tag: "Örnek Projeler", cases_title: "Pratikte nasıl çalışıyor.",
-        case1_ind: "Diş Kliniği · Bergen", case1_h: "Chatbot mesai sonrası randevuları yönetiyor",
-        case1_p: "Bergen'deki bir diş kliniği her akşam randevu kaybediyordu. Hastanın adını, tercih ettiği saati ve şikayetini toplayan bir chatbot devreye aldık — direkt rezervasyon sistemine.", case1_r: "→ Ayda 40 saatlik manuel rezervasyon ortadan kalktı",
+        case1_ind: "Diş Kliniği · Norveç", case1_h: "Chatbot mesai sonrası randevuları yönetiyor",
+        case1_p: "Bir diş kliniği her akşam randevu kaybediyordu. Hastanın adını, tercih ettiği saati ve şikayetini toplayan bir chatbot devreye aldık — direkt rezervasyon sistemine.", case1_r: "→ Ayda 40 saatlik manuel rezervasyon ortadan kalktı",
         case2_ind: "Restoran · İstanbul", case2_h: "AI haftada 200+ DM'i 3 dilde yanıtlıyor",
         case2_p: "İstanbul'daki bir restoran günde yüzlerce DM alıyordu. Menüye göre eğitilen AI artık Türkçe, İngilizce ve Arapça anlık yanıt veriyor.", case2_r: "→ Yanıt süresi: 4 saat → 12 saniye",
         case3_ind: "Gayrimenkul · Uzaktan", case3_h: "Web trafiğinden müşteri adayı hattı kuruldu",
-        case3_p: "Bir emlak şirketinin trafiği vardı ama müşteri adayı yoktu. Bot artık her ziyaretçiyi bütçe ve zaman çizelgesine göre puanlar ve ajana hazır profil gönderir.", case3_r: "→ Aylık 3 kat daha fazla nitelikli müşteri adayı",
+        case3_p: "Bir emlak şirketinin trafiği vardı ama müşteri adayı yoktu. Botumuz artık her ziyaretçiyi bütçe ve zaman çizelgesine göre puanlar ve ajana hazır profil gönderir.", case3_r: "→ Aylık 3 kat daha fazla nitelikli müşteri adayı",
         demo_tag: "Canlı Demo", demo_title: "Hemen deneyin.",
         demo_h3: "Müşterileriniz bunu deneyimleyecek.",
         demo_p1: "Aşağıdaki bot, canlı bir lead generation chatbot örneğidir. Adınızı, işletme türünüzü ve ihtiyacınızı toplar — ardından doğru çözümü önerir.",
@@ -766,13 +539,13 @@
         demo_s3: "E-posta toplar ve CRM'e gönderir", demo_s4: "Tam müşteri adayı özetiyle anlık bildirim alırsınız",
         contact_tag: "İletişim", contact_title: "Sizinki için çalışalım.",
         contact_h3: "Ücretsiz danışmanlık. Taahhüt yok.",
-        contact_p: "İşletmenizi anlatın, AI sisteminin nasıl görüneceğini canlı demo dahil göstereyim.",
-        contact_l1: "Konum", contact_l2: "Yanıt", contact_v2: "24 saat içinde",
+        contact_p: "İşletmenizi anlatın, AI sisteminin nasıl görüneceğini canlı demo dahil gösterelim.",
+        contact_l2: "Yanıt", contact_v2: "24 saat içinde",
         contact_l3: "Diller", contact_l4: "Teslimat", contact_v4: "Çoğu projede 48–72 saat",
         form_name: "Adınız", form_email: "E-posta", form_industry: "İşletme Türü",
         form_select: "Sektör seçin...", form_need: "Ne yapmanızı istiyorsunuz?",
-        form_placeholder: "Durumunuzu kısaca anlatın...", form_submit: "Ücretsiz Demo İste →",
-        bot_welcome: "Merhaba! 👋 İşletmeniz için doğru AI çözümünü bulmak için buradayım. Chatbot, lead generation veya e-posta otomasyonu mu arıyorsunuz?",
+        form_submit: "Ücretsiz Demo İste →",
+        bot_welcome: "Merhaba! 👋 İşletmeniz için doğru AI çözümünü bulmak için buradayız. Chatbot, lead generation veya e-posta otomasyonu mu arıyorsunuz?",
         chat_placeholder: "Bir mesaj yazın...",
         industry_1: "Restoran / Kafe", industry_2: "Klinik / Sağlık",
         industry_3: "Gayrimenkul", industry_4: "E-ticaret",
@@ -819,27 +592,27 @@
 
     const responses = {
       en: [
-        { keywords: ['chatbot', 'bot', 'chat'], reply: "Great choice! A chatbot can handle customer questions 24/7 and capture leads automatically. What type of business do you have?" },
+        { keywords: ['chatbot', 'bot', 'chat'], reply: "Great choice! Our chatbot can handle customer questions 24/7 and capture leads automatically. What type of business do you have?" },
         { keywords: ['lead', 'leads', 'generation'], reply: "Lead generation is one of the highest-ROI automations you can do. Visitors get qualified, and you get a full profile of each lead. What's your current lead volume?" },
         { keywords: ['email', 'dm', 'automation', 'follow'], reply: "Email automation is perfect for nurturing leads without manual effort. Are you looking to automate outreach or follow-ups?" },
-        { keywords: ['price', 'cost', 'how much', 'pricing', 'quote'], reply: "Every project is priced based on your specific needs. Fill in the contact form and I'll send you a custom quote within 24 hours." },
-        { keywords: ['restaurant', 'café', 'cafe', 'food'], reply: "For restaurants, the most popular solution is an AI that handles Instagram DMs and reservations 24/7. It answers menu questions and books tables automatically." },
+        { keywords: ['price', 'cost', 'how much', 'pricing', 'quote'], reply: "Every project is priced based on your specific needs. Fill in the contact form and we'll send you a custom quote within 24 hours." },
+        { keywords: ['restaurant', 'café', 'cafe', 'food'], reply: "For restaurants, our most popular solution is an AI that handles Instagram DMs and reservations 24/7. It answers menu questions and books tables automatically." },
         { keywords: ['clinic', 'dental', 'doctor', 'medical'], reply: "Clinics love our appointment bot — it collects patient info after hours so you wake up to a full schedule." },
         { keywords: ['hello', 'hi', 'hey', 'hei', 'hallo', 'merhaba', 'selam'], reply: "Hey! 👋 Great to meet you. Are you a business owner looking to automate something, or just exploring what AI can do?" },
-        { keywords: ['norway', 'norwegian', 'bergen', 'norsk'], reply: "Jeg jobber også med norske bedrifter! 🇳🇴 Chatbots can be set up fully in Norwegian. What kind of business are you running?" },
-        { keywords: ['turkey', 'turkish', 'türkiye', 'türk'], reply: "Türkiye'deki işletmelerle de çalışıyorum! 🇹🇷 Tüm sistem Türkçe kurulabilir. Ne tür bir işletmeniz var?" },
+        { keywords: ['norway', 'norwegian', 'bergen', 'norsk'], reply: "Vi jobber med norske bedrifter! 🇳🇴 Our chatbots can be set up fully in Norwegian. What kind of business are you running?" },
+        { keywords: ['turkey', 'turkish', 'türkiye', 'türk'], reply: "Türkiye'deki işletmelerle de çalışıyoruz! 🇹🇷 Tüm sistem Türkçe kurulabilir. Ne tür bir işletmeniz var?" },
       ],
       no: [
-        { keywords: ['chatbot', 'bot', 'chat'], reply: "Godt valg! En chatbot kan håndtere kundespørsmål 24/7 og fange opp leads automatisk. Hvilken type bedrift har du?" },
+        { keywords: ['chatbot', 'bot', 'chat'], reply: "Godt valg! Vår chatbot kan håndtere kundespørsmål 24/7 og fange opp leads automatisk. Hvilken type bedrift har du?" },
         { keywords: ['lead', 'leads'], reply: "Leadgenerering er en av de høyeste ROI-automatiseringene du kan gjøre. Hva er din nåværende leadvolum?" },
-        { keywords: ['pris', 'kostnad', 'tilbud'], reply: "Hvert prosjekt prises basert på dine spesifikke behov. Fyll ut kontaktskjemaet så sender jeg deg et tilbud innen 24 timer." },
+        { keywords: ['pris', 'kostnad', 'tilbud'], reply: "Hvert prosjekt prises basert på dine spesifikke behov. Fyll ut kontaktskjemaet så sender vi deg et tilbud innen 24 timer." },
         { keywords: ['hei', 'hallo', 'god dag'], reply: "Hei! 👋 Hyggelig å møte deg. Er du en bedriftseier som ønsker å automatisere noe?" },
       ],
       tr: [
-        { keywords: ['chatbot', 'bot', 'sohbet'], reply: "Harika seçim! Bir chatbot müşteri sorularını 7/24 yanıtlayabilir ve otomatik olarak müşteri adayı toplayabilir. Ne tür bir işletmeniz var?" },
+        { keywords: ['chatbot', 'bot', 'sohbet'], reply: "Harika seçim! Chatbotumuz müşteri sorularını 7/24 yanıtlayabilir ve otomatik olarak müşteri adayı toplayabilir. Ne tür bir işletmeniz var?" },
         { keywords: ['lead', 'müşteri', 'potansiyel'], reply: "Lead generation en yüksek ROI'lu otomasyonlardan biri. Mevcut müşteri adayı hacminiz nedir?" },
-        { keywords: ['fiyat', 'ücret', 'teklif', 'ne kadar'], reply: "Her proje özel ihtiyaçlara göre fiyatlandırılır. Formu doldurun, 24 saat içinde size özel teklif göndereyim." },
-        { keywords: ['merhaba', 'selam', 'hey'], reply: "Merhaba! 👋 Tanıştığımıza memnun oldum. Bir şeyleri otomatize etmek isteyen bir işletme sahibi misiniz?" },
+        { keywords: ['fiyat', 'ücret', 'teklif', 'ne kadar'], reply: "Her proje özel ihtiyaçlara göre fiyatlandırılır. Formu doldurun, 24 saat içinde size özel teklif gönderelim." },
+        { keywords: ['merhaba', 'selam', 'hey'], reply: "Merhaba! 👋 Tanıştığımıza memnun olduk. Bir şeyleri otomatize etmek isteyen bir işletme sahibi misiniz?" },
       ]
     };
 
@@ -870,8 +643,8 @@
         if (r.keywords.some(k => lower.includes(k))) return r.reply;
       }
       const fallbacks = {
-        en: "That's a great question! Could you tell me a bit more about your business and what you're trying to automate?",
-        no: "Det er et godt spørsmål! Kan du fortelle meg litt mer om bedriften din og hva du ønsker å automatisere?",
+        en: "That's a great question! Could you tell us a bit more about your business and what you're trying to automate?",
+        no: "Det er et godt spørsmål! Kan du fortelle oss litt mer om bedriften din og hva du ønsker å automatisere?",
         tr: "Harika bir soru! İşletmeniz ve otomatize etmek istediğiniz şey hakkında biraz daha bilgi verebilir misiniz?"
       };
       return fallbacks[currentLang] || fallbacks.en;
@@ -897,17 +670,14 @@
       const form = e.target;
       const btn = form.querySelector('.form-submit');
       const data = new FormData(form);
-
       fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        method: 'POST', body: data, headers: { 'Accept': 'application/json' }
       }).then(res => {
         if (res.ok) {
           const successMsg = {
-            en: "✓ Request received — I'll be in touch within 24h",
-            no: "✓ Mottatt — jeg tar kontakt innen 24 timer",
-            tr: "✓ Alındı — 24 saat içinde iletişime geçeceğim"
+            en: "✓ Request received — we'll be in touch within 24h",
+            no: "✓ Mottatt — vi tar kontakt innen 24 timer",
+            tr: "✓ Alındı — 24 saat içinde iletişime geçeceğiz"
           };
           btn.textContent = successMsg[currentLang] || successMsg.en;
           btn.style.background = '#22c55e';
