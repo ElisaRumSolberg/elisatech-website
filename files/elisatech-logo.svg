@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Arka plan şeffaf -->
+  
+  <g transform="translate(100, 100)">
+    <!-- Soluk tam halkalar -->
+    <circle cx="0" cy="0" r="78" fill="none" stroke="#c8f060" stroke-width="0.4" opacity="0.1"/>
+    
+    <!-- Nöron bağlantı çizgileri -->
+    <line x1="-52" y1="-55" x2="52" y2="-55" stroke="#c8f060" stroke-width="0.8" opacity="0.2"/>
+    <line x1="-52" y1="-55" x2="-72" y2="16" stroke="#c8f060" stroke-width="0.6" opacity="0.15"/>
+    <line x1="52" y1="-55" x2="72" y2="16" stroke="#c8f060" stroke-width="0.6" opacity="0.15"/>
+    <line x1="-52" y1="-55" x2="72" y2="16" stroke="#6366f1" stroke-width="0.5" opacity="0.13"/>
+    <line x1="52" y1="-55" x2="-72" y2="16" stroke="#6366f1" stroke-width="0.5" opacity="0.13"/>
+    <line x1="-52" y1="-55" x2="-20" y2="-20" stroke="#c8f060" stroke-width="0.4" opacity="0.18" stroke-dasharray="3,3"/>
+    <line x1="52" y1="-55" x2="20" y2="-20" stroke="#c8f060" stroke-width="0.4" opacity="0.18" stroke-dasharray="3,3"/>
+
+    <!-- Ana üst orbital yay -->
+    <path d="M -52 -55 A 74 74 0 0 1 52 -55" fill="none" stroke="#c8f060" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- Alt soluk yay -->
+    <path d="M -52 55 A 74 74 0 0 0 52 55" fill="none" stroke="#c8f060" stroke-width="0.6" stroke-linecap="round" opacity="0.12"/>
+    <!-- Eğik mor orbital -->
+    <path d="M -5 -74 A 74 46 0 0 1 67 17" fill="none" stroke="#6366f1" stroke-width="1.4" stroke-linecap="round" opacity="0.62" transform="rotate(-18)"/>
+
+    <!-- Orbital noktalar — büyük üstte -->
+    <circle cx="-52" cy="-55" r="7" fill="#c8f060"/>
+    <circle cx="-52" cy="-55" r="12" fill="none" stroke="#c8f060" stroke-width="0.8" opacity="0.22"/>
+    <circle cx="52" cy="-55" r="7" fill="#c8f060"/>
+    <circle cx="52" cy="-55" r="12" fill="none" stroke="#c8f060" stroke-width="0.8" opacity="0.22"/>
+    <!-- Sol küçük -->
+    <circle cx="-72" cy="16" r="4" fill="#c8f060" opacity="0.6"/>
+    <circle cx="-72" cy="16" r="8" fill="none" stroke="#c8f060" stroke-width="0.5" opacity="0.18"/>
+    <!-- Sağ mor -->
+    <circle cx="72" cy="16" r="4" fill="#6366f1" opacity="0.85"/>
+    <circle cx="72" cy="16" r="8" fill="none" stroke="#6366f1" stroke-width="0.5" opacity="0.25"/>
+    <!-- Üst merkez küçük -->
+    <circle cx="0" cy="-78" r="2.5" fill="#6366f1" opacity="0.45"/>
+
+    <!-- E — yuvarlak, temiz, nokta yok -->
+    <path d="M -20 -34 L -20 34" stroke="#f5f5f0" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+    <path d="M -20 -34 L 20 -34" stroke="#f5f5f0" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+    <path d="M -20 0 L 13 0" stroke="#f5f5f0" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+    <path d="M -20 34 L 20 34" stroke="#f5f5f0" stroke-width="8.5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
