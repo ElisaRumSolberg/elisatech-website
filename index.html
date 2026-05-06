@@ -42,7 +42,7 @@
     .lang-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(200,240,96,0.06); }
     .lang-btn:hover:not(.active) { border-color: var(--white); color: var(--white); }
     .nav-right { display: flex; align-items: center; }
-    .nav-cta { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.6rem 1.4rem; border: 1px solid var(--border); color: var(--white); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .nav-cta { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.6rem 1.4rem; border: 1px solid var(--border); color: var(--white); text-decoration: none; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
     .nav-cta:hover { border-color: var(--accent); color: var(--accent); }
     .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 4rem; position: relative; overflow: hidden; }
     .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.3; mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%); }
@@ -173,17 +173,35 @@
     [data-lang] { display: none; }
     [data-lang].lang-active { display: block; }
     span[data-lang].lang-active { display: inline; }
+
+    /* ===== MOBILE FIX ===== */
     @media (max-width: 900px) {
-      nav { padding: 1.25rem 1.5rem; }
+      nav { padding: 1rem 1.25rem; }
       .nav-links { display: none; }
+
+      /* Logo küçült */
+      .nav-logo-svg { width: 44px; height: 44px; }
+      .nav-logo-text { font-size: 0.78rem; }
+
+      /* CTA buton gizle — hero'da zaten var */
+      .nav-cta { display: none; }
+
+      /* Lang butonları küçült ve sıkıştır */
+      .lang-toggle { gap: 0.25rem; margin-right: 0; }
+      .lang-btn { font-size: 0.58rem; padding: 0.2rem 0.45rem; }
+
+      /* nav-right düzelt */
+      .nav-right { gap: 0; }
+
       section { padding: 5rem 1.5rem; }
-      .hero { padding: 0 1.5rem; }
+      .hero { padding: 0 1.5rem; padding-top: 5rem; }
       .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
       .solve-grid, .services-grid, .cases-grid, .demo-container, .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
       .trust-bar { padding: 1.25rem 1.5rem; }
     }
+    /* ===== END MOBILE FIX ===== */
   </style>
 </head>
 <body>
