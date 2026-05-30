@@ -93,7 +93,12 @@
     .service-features { list-style: none; margin-top: 1.5rem; }
     .service-features li { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); padding: 0.4rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; align-items: center; }
     .service-features li::before { content: '→'; color: var(--accent); }
-    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+    .cases-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem; 
+  margin-top: 4rem; 
+}
     .case-card { border: 1px solid var(--border); padding: 2.5rem; position: relative; transition: border-color 0.3s; }
     .case-card:hover { border-color: var(--accent2); }
     .case-industry { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1.5rem; padding: 0.3rem 0.7rem; border: 1px solid var(--accent2); display: inline-block; }
@@ -373,6 +378,19 @@
         <h3 data-i18n="case3_h">Lead pipeline built from website traffic</h3>
         <p data-i18n="case3_p">A property agency had traffic but no way to capture intent. Our lead-gen bot now asks qualifying questions, scores each lead by budget and timeline, and sends the agent a full profile — ready to call.</p>
         <div class="case-result" data-i18n="case3_r">→ 3x more qualified leads per month</div>
+      
+      </div>
+      <div class="case-card">
+        <div class="case-industry" data-i18n="case4_ind">Driving School · Oslo</div>
+        <h3 data-i18n="case4_h">Chatbot answers 24/7 — even after closing time</h3>
+        <p data-i18n="case4_p">A driving school in Oslo was missing enquiries every evening. Our chatbot now answers pricing questions, explains packages, and collects contact info automatically — day and night.</p>
+        <div class="case-result" data-i18n="case4_r">→ 0 missed leads after hours</div>
+      </div>
+      <div class="case-card">
+        <div class="case-industry" data-i18n="case5_ind">Hair Salon · Stavanger</div>
+        <h3 data-i18n="case5_h">Booking bot fills the calendar automatically</h3>
+        <p data-i18n="case5_p">A hair salon in Stavanger was spending 2 hours a day on Instagram DMs and booking calls. An AI now handles all enquiries, collects preferred times, and sends them directly to the owner.</p>
+        <div class="case-result" data-i18n="case5_r">→ 2 hours/day saved, fully booked weeks</div>
       </div>
     </div>
   </section>
@@ -510,6 +528,14 @@
         case2_p: "An Istanbul restaurant received hundreds of DMs daily. An AI trained on their menu now answers instantly in Turkish, English, and Arabic.", case2_r: "→ Response time: 4 hours → 12 seconds",
         case3_ind: "Real Estate · Remote", case3_h: "Lead pipeline built from website traffic",
         case3_p: "A property agency had traffic but no leads. Our bot now scores each visitor by budget and timeline, sending the agent a full profile ready to call.", case3_r: "→ 3x more qualified leads per month",
+        case4_ind: "Driving School · Oslo",
+case4_h: "Chatbot answers 24/7 — even after closing time",
+case4_p: "A driving school in Oslo was missing enquiries every evening. Our chatbot now answers pricing questions, explains packages, and collects contact info — day and night.",
+case4_r: "→ 0 missed leads after hours",
+case5_ind: "Hair Salon · Stavanger",
+case5_h: "Booking bot fills the calendar automatically",
+case5_p: "A hair salon in Stavanger was spending 2 hours a day on Instagram DMs and booking calls. An AI now handles all enquiries and sends them directly to the owner.",
+case5_r: "→ 2 hours/day saved, fully booked weeks",
         demo_tag: "Live Demo", demo_title: "Try it right now.",
         demo_h3: "This is what your customers will experience.",
         demo_p1: "The bot below is a live example of a lead generation chatbot. It collects your name, business type, and need — then suggests the right solution.",
@@ -559,6 +585,14 @@
         case2_p: "En Istanbul-restaurant mottok hundrevis av DM-er daglig. En AI trent på menyen svarer nå umiddelbart på tyrkisk, engelsk og arabisk.", case2_r: "→ Responstid: 4 timer → 12 sekunder",
         case3_ind: "Eiendom · Remote", case3_h: "Lead-pipeline bygget fra nettstedstrafikk",
         case3_p: "Et eiendomsselskap hadde trafikk men ingen leads. Vår bot scorer nå hver besøkende etter budsjett og tidslinje og sender agenten en fullstendig profil.", case3_r: "→ 3x flere kvalifiserte leads per måned",
+        case4_ind: "Trafikskole · Oslo",
+case4_h: "Chatbot svarer 24/7 — selv etter stengetid",
+case4_p: "En trafikskole i Oslo mistet henvendelser hver kveld. Vår chatbot svarer nå på prisspørsmål, forklarer pakker og samler kontaktinfo — dag og natt.",
+case4_r: "→ 0 tapte leads etter stengetid",
+case5_ind: "Frisørsalong · Stavanger",
+case5_h: "Bookingbot fyller kalenderen automatisk",
+case5_p: "En frisørsalong i Stavanger brukte 2 timer daglig på Instagram DM-er og bookingsamtaler. En AI håndterer nå alle henvendelser og sender dem direkte til eieren.",
+case5_r: "→ 2 timer/dag spart, fullt bookede uker",
         demo_tag: "Live Demo", demo_title: "Prøv det nå.",
         demo_h3: "Dette er hva kundene dine vil oppleve.",
         demo_p1: "Boten nedenfor er et live eksempel på en lead generation-chatbot. Den samler navn, bedriftstype og behov — og foreslår riktig løsning.",
@@ -608,6 +642,14 @@
         case2_p: "İstanbul'daki bir restoran günde yüzlerce DM alıyordu. Menüye göre eğitilen AI artık Türkçe, İngilizce ve Arapça anlık yanıt veriyor.", case2_r: "→ Yanıt süresi: 4 saat → 12 saniye",
         case3_ind: "Gayrimenkul · Uzaktan", case3_h: "Web trafiğinden müşteri adayı hattı kuruldu",
         case3_p: "Bir emlak şirketinin trafiği vardı ama müşteri adayı yoktu. Botumuz artık her ziyaretçiyi bütçe ve zaman çizelgesine göre puanlar ve ajana hazır profil gönderir.", case3_r: "→ Aylık 3 kat daha fazla nitelikli müşteri adayı",
+        case4_ind: "Trafikskole · Oslo",
+case4_h: "Chatbot 7/24 yanıtlıyor — kapanış sonrası bile",
+case4_p: "Oslo'da bir trafik okulu her akşam sorguları kaçırıyordu. Chatbotumuz artık fiyat sorularını yanıtlıyor, paketleri açıklıyor ve iletişim bilgilerini topluyor — gece gündüz.",
+case4_r: "→ Mesai sonrası sıfır kaçırılan müşteri",
+case5_ind: "Kuaför Salonu · Stavanger",
+case5_h: "Booking botu takvimi otomatik dolduruyor",
+case5_p: "Stavanger'daki bir kuaför salonu günde 2 saat Instagram DM ve rezervasyon aramalarına harcıyordu. AI artık tüm sorguları yönetiyor ve doğrudan sahibine gönderiyor.",
+case5_r: "→ Günde 2 saat tasarruf, tamamen dolu haftalar",
         demo_tag: "Canlı Demo", demo_title: "Hemen deneyin.",
         demo_h3: "Müşterileriniz bunu deneyimleyecek.",
         demo_p1: "Aşağıdaki bot, canlı bir lead generation chatbot örneğidir. Adınızı, işletme türünüzü ve ihtiyacınızı toplar — ardından doğru çözümü önerir.",
