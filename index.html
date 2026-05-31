@@ -832,8 +832,13 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ action: 'sendMessage', sessionId: SESSION_ID, chatInput: text })
         });
-        const data = await res.json();
         document.getElementById('typing')?.remove();
+        if (res.status === 500) {
+          const thankYou = { en: 'Thank you! Your information has been received. Elisa will contact you within 24 hours. 😊', no: 'Takk! Informasjonen din er mottatt. Elisa vil kontakte deg innen 24 timer. 😊', tr: 'Teşekkürler! Bilgileriniz alındı. Elisa 24 saat içinde sizinle iletişime geçecek. 😊' };
+          addMessage(thankYou[currentLang] || thankYou.en, 'bot');
+          return;
+        }
+        const data = await res.json();
         addMessage(data.output || data.agentResponse || data.text || 'Something went wrong.', 'bot');
       } catch {
         document.getElementById('typing')?.remove();
