@@ -834,7 +834,7 @@
         });
         const data = await res.json();
         document.getElementById('typing')?.remove();
-        addMessage(data.output || data.text || 'Something went wrong.', 'bot');
+        addMessage(data.output || data.agentResponse || data.text || 'Something went wrong.', 'bot');
       } catch {
         document.getElementById('typing')?.remove();
         const err = { en: 'Connection error. Please try again.', no: 'Tilkoblingsfeil. Prøv igjen.', tr: 'Bağlantı hatası. Lütfen tekrar deneyin.' };
