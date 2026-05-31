@@ -801,37 +801,8 @@
     const input = document.getElementById('chatInput');
     const sendBtn = document.getElementById('chatSend');
 
-    const responses = {
-      en: [
-        { keywords: ['chatbot','bot','chat'], reply: "Great choice! Our chatbot can handle customer questions 24/7 and capture leads automatically. What type of business do you have?" },
-        { keywords: ['lead','leads','generation'], reply: "Lead generation is one of the highest-ROI automations you can do. Visitors get qualified, and you get a full profile of each lead. What's your current lead volume?" },
-        { keywords: ['email','dm','automation','follow'], reply: "Email automation is perfect for nurturing leads without manual effort. Are you looking to automate outreach or follow-ups?" },
-        { keywords: ['price','cost','how much','pricing','quote'], reply: "Every project is priced based on your specific needs. Fill in the contact form and we'll send you a custom quote within 24 hours." },
-        { keywords: ['restaurant','café','cafe','food'], reply: "For restaurants, our most popular solution is an AI that handles Instagram DMs and reservations 24/7. It answers menu questions and books tables automatically." },
-        { keywords: ['clinic','dental','doctor','medical'], reply: "Clinics love our appointment bot — it collects patient info after hours so you wake up to a full schedule." },
-        { keywords: ['driving','traffic','school','trafikk','trafik'], reply: "Perfect fit! Driving schools lose lots of enquiries after hours. Our bot answers pricing and package questions 24/7 and collects leads automatically." },
-        { keywords: ['hair','salon','frisør','kuaför','booking'], reply: "Hair salons are a great use case! Our bot handles Instagram DMs, collects preferred times, and sends them straight to you — no more 2-hour daily admin." },
-        { keywords: ['hello','hi','hey','hei','hallo','merhaba','selam'], reply: "Hey! 👋 Great to meet you. Are you a business owner looking to automate something, or just exploring what AI can do?" },
-        { keywords: ['norway','norwegian','bergen','oslo','stavanger','norsk'], reply: "Vi jobber med norske bedrifter! 🇳🇴 Our chatbots can be set up fully in Norwegian. What kind of business are you running?" },
-        { keywords: ['turkey','turkish','türkiye','türk'], reply: "Türkiye'deki işletmelerle de çalışıyoruz! 🇹🇷 Tüm sistem Türkçe kurulabilir. Ne tür bir işletmeniz var?" },
-      ],
-      no: [
-        { keywords: ['chatbot','bot','chat'], reply: "Godt valg! Vår chatbot kan håndtere kundespørsmål 24/7 og fange opp leads automatisk. Hvilken type bedrift har du?" },
-        { keywords: ['lead','leads'], reply: "Leadgenerering er en av de høyeste ROI-automatiseringene du kan gjøre. Hva er din nåværende leadvolum?" },
-        { keywords: ['trafikk','trafikskole','kjøring','førerett'], reply: "Perfekt match! Trafikkskoler mister mange henvendelser etter stengetid. Vår bot svarer på pris- og pakkespørsmål 24/7 og samler leads automatisk." },
-        { keywords: ['frisør','salong','hår','booking'], reply: "Frisørsalonger er et flott brukstilfelle! Boten håndterer Instagram DM-er, samler inn ønskede tider og sender dem rett til deg." },
-        { keywords: ['pris','kostnad','tilbud'], reply: "Hvert prosjekt prises basert på dine spesifikke behov. Fyll ut kontaktskjemaet så sender vi deg et tilbud innen 24 timer." },
-        { keywords: ['hei','hallo','god dag'], reply: "Hei! 👋 Hyggelig å møte deg. Er du en bedriftseier som ønsker å automatisere noe?" },
-      ],
-      tr: [
-        { keywords: ['chatbot','bot','sohbet'], reply: "Harika seçim! Chatbotumuz müşteri sorularını 7/24 yanıtlayabilir ve otomatik olarak müşteri adayı toplayabilir. Ne tür bir işletmeniz var?" },
-        { keywords: ['trafik','ehliyet','sürücü','okul'], reply: "Mükemmel uyum! Trafik okulları mesai sonrası çok fazla sorgu kaçırıyor. Botumuz fiyat ve paket sorularını 7/24 yanıtlıyor." },
-        { keywords: ['kuaför','salon','berber','randevu'], reply: "Kuaför salonları için harika bir çözüm! Bot Instagram DM'lerini yönetiyor, tercih edilen saatleri topluyor ve doğrudan size gönderiyor." },
-        { keywords: ['lead','müşteri','potansiyel'], reply: "Lead generation en yüksek ROI'lu otomasyonlardan biri. Mevcut müşteri adayı hacminiz nedir?" },
-        { keywords: ['fiyat','ücret','teklif','ne kadar'], reply: "Her proje özel ihtiyaçlara göre fiyatlandırılır. Formu doldurun, 24 saat içinde size özel teklif gönderelim." },
-        { keywords: ['merhaba','selam','hey'], reply: "Merhaba! 👋 Tanıştığımıza memnun olduk. Bir şeyleri otomatize etmek isteyen bir işletme sahibi misiniz?" },
-      ]
-    };
+    const N8N_WEBHOOK = 'https://elisatech.app.n8n.cloud/webhook/elisatech-site-bot-001/chat';
+    const SESSION_ID = 'session-' + Math.random().toString(36).slice(2);
 
     function addMessage(text, type) {
       const msg = document.createElement('div');
@@ -849,24 +820,26 @@
       messages.scrollTop = messages.scrollHeight;
     }
 
-    function getBotReply(text) {
-      const lower = text.toLowerCase();
-      const langResponses = responses[currentLang] || responses.en;
-      for (const r of langResponses) { if (r.keywords.some(k => lower.includes(k))) return r.reply; }
-      for (const r of responses.en) { if (r.keywords.some(k => lower.includes(k))) return r.reply; }
-      const fallbacks = {
-        en: "That's a great question! Could you tell us a bit more about your business and what you're trying to automate?",
-        no: "Det er et godt spørsmål! Kan du fortelle oss litt mer om bedriften din og hva du ønsker å automatisere?",
-        tr: "Harika bir soru! İşletmeniz ve otomatize etmek istediğiniz şey hakkında biraz daha bilgi verebilir misiniz?"
-      };
-      return fallbacks[currentLang] || fallbacks.en;
-    }
-
-    function sendMessage() {
+    async function sendMessage() {
       const text = input.value.trim();
       if (!text) return;
-      addMessage(text, 'user'); input.value = ''; showTyping();
-      setTimeout(() => { document.getElementById('typing')?.remove(); addMessage(getBotReply(text), 'bot'); }, 1200 + Math.random() * 600);
+      addMessage(text, 'user');
+      input.value = '';
+      showTyping();
+      try {
+        const res = await fetch(N8N_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'sendMessage', sessionId: SESSION_ID, chatInput: text })
+        });
+        const data = await res.json();
+        document.getElementById('typing')?.remove();
+        addMessage(data.output || data.text || 'Something went wrong.', 'bot');
+      } catch {
+        document.getElementById('typing')?.remove();
+        const err = { en: 'Connection error. Please try again.', no: 'Tilkoblingsfeil. Prøv igjen.', tr: 'Bağlantı hatası. Lütfen tekrar deneyin.' };
+        addMessage(err[currentLang] || err.en, 'bot');
+      }
     }
 
     sendBtn.addEventListener('click', sendMessage);
