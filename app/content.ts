@@ -10,6 +10,7 @@ export type Featured = {
   proof?: string;
   stack: string[];
   links: Link[];
+  caseStudy?: string;
   shot: { src: string; width: number; height: number; alt: string };
   tint: "blush" | "lavender" | "sage" | "surface";
 };
@@ -25,6 +26,7 @@ export const featured: Featured[] = [
     proof: "Checked with Vitest, Playwright and axe accessibility scans before changes go live.",
     stack: ["Next.js", "Supabase", "Resend", "Vercel"],
     links: [{ label: "Visit the live site", href: "https://www.mangfoldshusetvestland.no/" }],
+    caseStudy: "/projects/mangfoldshuset-vestland",
     shot: { src: "/work/mangfoldshuset.jpg", width: 2160, height: 1170, alt: "Front page of mangfoldshusetvestland.no: a green hero reading 'Et varmt fellesskap i Vestland' beside a photo from a girls' basketball event." },
     tint: "sage",
   },

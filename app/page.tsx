@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Nav } from "./components/nav";
 import { ContactForm } from "./components/contact-form";
+import { Footer } from "./components/footer";
 import { Pearl, RevealObserver, Shot, Sparkle } from "./components/motion";
 import { approach, experiments, featured, stack } from "./content";
 
@@ -122,6 +124,11 @@ export default function Home() {
                     ))}
                   </ul>
                   <div className="project-links">
+                    {p.caseStudy && (
+                      <Link href={p.caseStudy} className="link-arrow">
+                        Read the case study <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
                     {p.links.map((l) => (
                       <External key={l.href} href={l.href}>{l.label}</External>
                     ))}
@@ -277,14 +284,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer">
-        <span className="wordmark small">
-          elisa<span className="dot">.</span>
-          <small>studio</small>
-        </span>
-        <p>Thoughtful technology, beautifully built.</p>
-        <p>© 2026 Elisa Rumeysa Solberg · Bergen</p>
-      </footer>
+      <Footer />
     </>
   );
 }
