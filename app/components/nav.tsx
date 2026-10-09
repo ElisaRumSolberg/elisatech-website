@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#studio", label: "Studio" },
-  { href: "#about", label: "About" },
+  { href: "/#work", label: "Work" },
+  { href: "/#studio", label: "Studio" },
+  { href: "/#about", label: "About" },
 ];
 
 export function Nav() {
@@ -28,21 +29,21 @@ export function Nav() {
 
   return (
     <header className={`nav${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}>
-      <a href="#top" className="wordmark" aria-label="Elisa Studio, back to top">
+      <Link href="/" className="wordmark" aria-label="Elisa Studio, home">
         elisa<span className="dot">.</span>
         <small>studio</small>
-      </a>
+      </Link>
       <nav aria-label="Main">
         <ul id="menu" className="nav-links">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
+              <Link href={l.href} onClick={() => setOpen(false)}>{l.label}</Link>
             </li>
           ))}
           <li className="nav-cta-item">
-            <a href="#contact" className="btn btn-primary btn-small" onClick={() => setOpen(false)}>
+            <Link href="/#contact" className="btn btn-primary btn-small" onClick={() => setOpen(false)}>
               Let&apos;s talk
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
