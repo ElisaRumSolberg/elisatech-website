@@ -357,3 +357,53 @@ section > * { max-width: var(--max); margin-inline: auto; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Case study */
+.case { padding-top: 6.5rem; }
+.case-hero { max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto; padding: clamp(1.5rem, 4vw, 3rem) var(--gutter) 0; }
+.back-link { display: inline-flex; gap: 0.4rem; font-weight: 600; text-decoration: none; color: var(--muted); margin-bottom: 2rem; transition: color 0.2s; }
+.back-link:hover { color: var(--plum); }
+.case-title { font-family: var(--font-display), serif; font-weight: 400; font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: 1.02; letter-spacing: -0.035em; margin-top: 1.1rem; text-wrap: balance; }
+.case-lede { margin-top: 1.25rem; max-width: 56ch; font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--muted); }
+.case-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem 2rem; margin-top: 2.5rem; padding: 1.5rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.case-facts dt { font-size: 0.85rem; color: var(--muted); }
+.case-facts dd { margin-top: 0.3rem; font-weight: 600; }
+.case-showcase { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.5rem); align-items: end; padding-top: clamp(3rem, 6vw, 4.5rem); }
+.case-phone img { border-radius: 28px; border: 8px solid var(--plum); box-shadow: 0 30px 60px -30px rgba(73, 55, 73, 0.5); }
+.case-section { padding-block: clamp(4rem, 8vw, 6.5rem); }
+.case-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto; }
+.case-split > * { max-width: none; margin: 0; }
+.case-lists { display: grid; gap: 1.25rem; }
+.case-list { border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.25rem); }
+.case-list h3 { font-family: var(--font-display), serif; font-weight: 400; font-size: 1.7rem; letter-spacing: -0.02em; }
+.case-list ul { margin-top: 1rem; display: grid; gap: 0.6rem; }
+.case-list li { display: flex; gap: 0.65rem; align-items: flex-start; }
+.list-mark { flex: none; width: 0.85rem; margin-top: 0.4rem; fill: var(--accent); }
+.case-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.case-gallery figure { margin: 0; }
+.case-gallery figure:first-child { grid-column: 1 / -1; }
+.case-gallery figcaption { margin-top: 0.85rem; color: var(--muted); font-size: 0.95rem; }
+.case-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3rem); }
+.case-cards article { padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.case-cards h3 { font-family: var(--font-display), serif; font-weight: 400; font-size: 1.6rem; line-height: 1.15; letter-spacing: -0.02em; }
+.case-cards p { margin-top: 0.6rem; color: var(--muted); max-width: 56ch; }
+.case-challenges .path { margin-top: clamp(2rem, 4vw, 3rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-challenges .path li::before, .case-challenges .path li:nth-child(3n)::before { right: -3rem; }
+.case-challenges .path li:nth-child(2n)::before { right: 0; }
+.case-challenges .path p { max-width: 50ch; }
+.case-quality-box { border-radius: var(--radius); padding: clamp(1.75rem, 4vw, 3rem); }
+.case-quality-box > p { margin-top: 1.5rem; max-width: 62ch; color: #5e4f5c; }
+.case-numbers { display: flex; flex-wrap: wrap; gap: 1.5rem 3.5rem; margin-top: 1.75rem; }
+.case-numbers li { display: grid; gap: 0.2rem; }
+.case-numbers strong { font-family: var(--font-display), serif; font-weight: 400; font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1; letter-spacing: -0.03em; font-variant-numeric: lining-nums; }
+.case-numbers span { color: #5e4f5c; font-size: 0.95rem; max-width: 20ch; }
+.case-cta { padding-bottom: clamp(5rem, 10vw, 8rem); }
+@media (max-width: 900px) {
+  .case-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-showcase { grid-template-columns: minmax(0, 1fr); }
+  .case-phone { width: min(60vw, 16rem); justify-self: center; }
+  .case-split, .case-gallery, .case-cards, .case-challenges .path { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .case-facts { grid-template-columns: minmax(0, 1fr); }
+}
