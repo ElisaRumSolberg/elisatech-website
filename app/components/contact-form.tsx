@@ -1,17 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import type { Dict } from "../i18n";
 
 type State = "idle" | "sending" | "sent" | "error" | "invalid";
 
-const messages: Record<Exclude<State, "idle">, string> = {
-  sending: "Sending…",
-  sent: "Thank you! Your message reached me, and I'll reply within a couple of days.",
-  error: "Your message didn't go through. Please try again, or write to hello@elisatech.io.",
-  invalid: "Please add your name, a valid email and a few words about what you need.",
-};
-
-export function ContactForm() {
+export function ContactForm({ t, lang }: { t: Dict["form"]; lang: string }) {
   const [state, setState] = useState<State>("idle");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -40,37 +34,35 @@ export function ContactForm() {
     <form className="contact-form" onSubmit={onSubmit} noValidate>
       <div className="field-row">
         <label className="field">
-          <span>Your name</span>
+          <span>{t.name}</span>
           <input name="name" type="text" autoComplete="name" required />
         </label>
         <label className="field">
-          <span>Email</span>
+          <span>{t.email}</span>
           <input name="email" type="email" autoComplete="email" required />
         </label>
       </div>
       <label className="field">
-        <span>What is it about?</span>
-        <select name="project_type" defaultValue="A website">
-          <option>A website</option>
-          <option>Improving an existing website</option>
-          <option>Software or an integration</option>
-          <option>AI or workflow automation</option>
-          <option>A job or internship</option>
-          <option>Something else</option>
+        <span>{t.type}</span>
+        <select name="project_type" defaultValue={t.types[0]}>
+          {t.types.map((o) => (
+            <option key={o}>{o}</option>
+          ))}
         </select>
       </label>
       <label className="field">
-        <span>Tell me a little</span>
-        <textarea name="message" rows={5} required placeholder="What you have in mind, and roughly when you need it" />
+        <span>{t.message}</span>
+        <textarea name="message" rows={5} required placeholder={t.placeholder} />
       </label>
+      <input type="hidden" name="language" value={lang} />
       <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="honeypot" aria-hidden="true" />
-      <p className="privacy">Your message goes to my inbox through Formspree and is only used to reply to you.</p>
+      <p className="privacy">{t.privacy}</p>
       <div className="form-end">
         <button type="submit" className="btn btn-primary" disabled={state === "sending"}>
-          {state === "sending" ? "Sending…" : "Send message"}
+          {state === "sending" ? t.sending : t.send}
         </button>
         <p className={`form-status ${state}`} role="status" aria-live="polite">
-          {state === "idle" || state === "sending" ? "" : messages[state]}
+          {state === "sent" ? t.sent : state === "error" ? t.error : state === "invalid" ? t.invalid : ""}
         </p>
       </div>
     </form>
