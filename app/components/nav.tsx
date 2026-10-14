@@ -23,8 +23,8 @@ export function Nav({ lang, t }: { lang: Lang; t: Strings }) {
   const home = href(lang, "/");
 
   const links = [
-    { href: `${home}#work`, label: t.work },
     { href: `${home}#studio`, label: t.studio },
+    { href: `${home}#work`, label: t.work },
     { href: `${home}#about`, label: t.about },
   ];
 

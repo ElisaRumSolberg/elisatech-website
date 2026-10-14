@@ -3,9 +3,9 @@ export type Accent = [string, string, string?];
 
 export const en = {
   meta: {
-    homeTitle: "Elisa Rumeysa Solberg — Elisa Studio | Websites, software and AI in Bergen",
+    homeTitle: "Elisa Studio — Websites and digital tools in Bergen | Elisa Rumeysa Solberg",
     homeDescription:
-      "Portfolio and web studio of Elisa Rumeysa Solberg, Computer Engineering student in Bergen. Websites, software and AI systems, with real projects and a direct line for new work.",
+      "Elisa Studio builds websites and digital tools for small businesses and organizations in Norway and abroad. Real projects, a clear process and a direct line for a quote.",
     ogDescription: "Soft in appearance. Strong in engineering. Websites, software and AI systems from Bergen.",
     ogLocale: "en_GB",
     jobTitle: "Computer Engineering student",
@@ -20,22 +20,23 @@ export const en = {
     tagline: "Soft in appearance. Strong in engineering.",
     copyright: "© 2026 Elisa Rumeysa Solberg · Bergen",
   },
-  nav: { work: "Work", studio: "Studio", about: "About", cta: "Let's talk" },
+  nav: { work: "Work", studio: "Services", about: "About", cta: "Get a quote" },
   hero: {
     words: [
-      { t: "A little" },
-      { t: "creativity,", em: true },
-      { t: "a lot" },
-      { t: "of" },
-      { t: "code.", underline: true },
+      { t: "Websites" },
+      { t: "and digital tools," },
+      { t: "built with", em: true },
+      { t: "care.", em: true, underline: true },
     ] as { t: string; em?: boolean; underline?: boolean }[],
-    sub: "Hi, I'm Elisa, a Computer Engineering student at HVL in Bergen, building thoughtful websites, useful software and intelligent systems.",
-    explore: "Explore my work",
-    workWithMe: "Work with me",
+    sub: "Elisa Studio builds websites, forms and smart digital tools for small businesses and organizations, in Norway and internationally. I'm Elisa, a Computer Engineering student at HVL, and I take care of everything from design to launch and support.",
+    explore: "Get a quote",
+    workWithMe: "See my work",
   },
   work: {
-    title: ["Selected ", "work"] as Accent,
-    lede: "A real website for a real organization, and the AI systems I'm proudest of. Each one says plainly what it is, and how far along it is.",
+    clientTitle: ["Client ", "work"] as Accent,
+    clientLede: "A website I designed, built and still look after for a nonprofit in Vestland.",
+    techTitle: ["More of ", "my work"] as Accent,
+    techLede: "AI systems and other projects that show how I build when things have to be precise. Each one says plainly what it is, and how far along it is.",
     caseStudy: "Read the case study",
     status: { live: "Live", demo: "Live demo", submitted: "Submitted" },
     featured: [
@@ -115,13 +116,26 @@ export const en = {
     title: ["What I can build ", "for you"] as Accent,
     lede: "For nonprofits, organizations and small businesses. Clear scope, honest estimates, and a site or tool you understand when it's handed over.",
     services: [
-      { title: "Web experiences", text: "Fast, responsive, accessible websites for organizations and small businesses, that your team can keep up to date.", example: "Like Mangfoldshuset Vestland" },
-      { title: "Software engineering", text: "Useful applications, integrations and APIs, with clean structure and tests, so they keep working after launch.", example: "Like the Bureaucracy Action Agent" },
-      { title: "AI & automation", text: "Practical, carefully scoped AI tools and workflows: chatbots, document helpers, forms that route themselves.", example: "Like ClearRights or the ElisaTech chatbot" },
+      { title: "New websites", text: "Fast, responsive and accessible websites for organizations and small businesses, built so your team can keep them up to date.", example: "Like Mangfoldshuset Vestland" },
+      { title: "Improving your current site", text: "Already have a website? I can make it faster, easier to use on phones, more accessible, or simply bring the content up to date.", example: "Speed, mobile, accessibility and content" },
+      { title: "Software and integrations", text: "Useful applications, forms and connections between the tools you already use, with clean structure and tests.", example: "Like the Bureaucracy Action Agent" },
+      { title: "AI and automation", text: "Practical, carefully scoped AI tools and workflows: chatbots, document helpers, forms that route themselves.", example: "Like ClearRights or the ElisaTech chatbot" },
     ],
     processLabel: "How a project runs",
     process: ["Discover", "Plan", "Design", "Build", "Review", "Launch"],
     cta: "Tell me about your project",
+  },
+  faq: {
+    title: ["Questions ", "clients ask"] as Accent,
+    items: [
+      { q: "What does a website cost?", a: "It depends on how many pages and features you need. After a short conversation you get a written quote, so you know the price before we start." },
+      { q: "How long does it take?", a: "It depends on the scope. You get a timeline together with the quote, and I tell you early if anything changes." },
+      { q: "Can I update the content myself?", a: "Yes, if you want to. I can build a simple admin area, like the one Mangfoldshuset uses, or show you how to use the tool we choose." },
+      { q: "Who owns the website and the domain?", a: "You do. The domain is registered in your name, and you get access to the code and the accounts the site runs on." },
+      { q: "Do you help after launch?", a: "Yes. I can take care of updates, fixes and small changes after launch, as we agree." },
+      { q: "Is the website accessible and secure?", a: "I test on phones, with the keyboard and with automated accessibility checks (axe), and I handle form data according to European privacy rules (GDPR)." },
+      { q: "Do you only work with clients in Norway?", a: "No. I'm based in Bergen and happy to meet clients here, but I also work remotely with clients in other countries, in Norwegian, English or Turkish." },
+    ],
   },
   approach: {
     title: ["How I ", "think", " through a project"] as Accent,

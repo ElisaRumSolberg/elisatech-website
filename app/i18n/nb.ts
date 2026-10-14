@@ -2,9 +2,9 @@ import type { Accent, Dict, Experiment, Featured } from "./en";
 
 export const nb: Dict = {
   meta: {
-    homeTitle: "Elisa Rumeysa Solberg — Elisa Studio | Nettsider, programvare og AI i Bergen",
+    homeTitle: "Elisa Studio — Nettsider og digitale løsninger i Bergen | Elisa Rumeysa Solberg",
     homeDescription:
-      "Portefølje og webstudio for Elisa Rumeysa Solberg, dataingeniørstudent i Bergen. Nettsider, programvare og AI-systemer, med ekte prosjekter og en direkte linje for nye oppdrag.",
+      "Elisa Studio lager nettsider og digitale løsninger for små bedrifter og foreninger i Norge og i utlandet. Ekte prosjekter, en tydelig prosess og en direkte linje for et tilbud.",
     ogDescription: "Myk i formen. Solid i koden. Nettsider, programvare og AI-systemer fra Bergen.",
     ogLocale: "nb_NO",
     jobTitle: "Dataingeniørstudent",
@@ -19,21 +19,23 @@ export const nb: Dict = {
     tagline: "Myk i formen. Solid i koden.",
     copyright: "© 2026 Elisa Rumeysa Solberg · Bergen",
   },
-  nav: { work: "Prosjekter", studio: "Studio", about: "Om meg", cta: "Ta kontakt" },
+  nav: { work: "Arbeid", studio: "Tjenester", about: "Om meg", cta: "Be om tilbud" },
   hero: {
     words: [
-      { t: "Litt" },
-      { t: "kreativitet,", em: true },
-      { t: "mye" },
-      { t: "kode.", underline: true },
+      { t: "Nettsider" },
+      { t: "og digitale løsninger," },
+      { t: "bygget med", em: true },
+      { t: "omtanke.", em: true, underline: true },
     ],
-    sub: "Hei, jeg er Elisa, dataingeniørstudent ved HVL i Bergen. Jeg lager gjennomtenkte nettsider, nyttig programvare og intelligente systemer.",
-    explore: "Se prosjektene mine",
-    workWithMe: "Jobb med meg",
+    sub: "Elisa Studio lager nettsider, skjemaer og smarte digitale løsninger for små bedrifter og foreninger, i Norge og internasjonalt. Jeg heter Elisa, er dataingeniørstudent ved HVL, og tar meg av alt fra design til lansering og oppfølging.",
+    explore: "Be om et tilbud",
+    workWithMe: "Se tidligere arbeid",
   },
   work: {
-    title: ["Utvalgte ", "prosjekter"] as Accent,
-    lede: "En ekte nettside for en ekte organisasjon, og AI-systemene jeg er mest stolt av. Hvert prosjekt sier rett ut hva det er, og hvor langt det har kommet.",
+    clientTitle: ["Arbeid for ", "kunder"] as Accent,
+    clientLede: "En nettside jeg har designet, bygget og fortsatt drifter for en frivillig organisasjon i Vestland.",
+    techTitle: ["Mer av ", "arbeidet mitt"] as Accent,
+    techLede: "AI-systemer og andre prosjekter som viser hvordan jeg bygger når ting må være nøyaktige. Hvert prosjekt sier rett ut hva det er, og hvor langt det har kommet.",
     caseStudy: "Les casestudien",
     status: { live: "I drift", demo: "Live-demo", submitted: "Levert" },
     featured: [
@@ -113,13 +115,26 @@ export const nb: Dict = {
     title: ["Hva jeg kan bygge ", "for deg"] as Accent,
     lede: "For frivillige organisasjoner, foreninger og små bedrifter. Tydelig omfang, ærlige anslag, og en nettside eller et verktøy du forstår når det overleveres.",
     services: [
-      { title: "Nettsider", text: "Raske, responsive og tilgjengelige nettsider for organisasjoner og små bedrifter, som teamet ditt kan holde oppdatert selv.", example: "Som Mangfoldshuset Vestland" },
-      { title: "Programvare", text: "Nyttige applikasjoner, integrasjoner og API-er, med ryddig struktur og tester, så de fortsetter å virke etter lansering.", example: "Som Bureaucracy Action Agent" },
+      { title: "Nye nettsider", text: "Raske, responsive og tilgjengelige nettsider for organisasjoner og små bedrifter, bygget slik at teamet ditt kan holde dem oppdatert selv.", example: "Som Mangfoldshuset Vestland" },
+      { title: "Forbedring av nettsiden du har", text: "Har du allerede en nettside? Jeg kan gjøre den raskere, enklere å bruke på mobil, mer tilgjengelig, eller rett og slett oppdatere innholdet.", example: "Fart, mobil, tilgjengelighet og innhold" },
+      { title: "Programvare og integrasjoner", text: "Nyttige applikasjoner, skjemaer og koblinger mellom verktøyene du allerede bruker, med ryddig struktur og tester.", example: "Som Bureaucracy Action Agent" },
       { title: "AI og automatisering", text: "Praktiske, nøye avgrensede AI-verktøy og arbeidsflyter: chatboter, dokumenthjelpere og skjemaer som sender seg selv videre.", example: "Som ClearRights eller ElisaTech-chatboten" },
     ],
     processLabel: "Slik foregår et prosjekt",
     process: ["Kartlegge", "Planlegge", "Designe", "Bygge", "Gjennomgå", "Lansere"],
     cta: "Fortell meg om prosjektet ditt",
+  },
+  faq: {
+    title: ["Spørsmål ", "kunder stiller"] as Accent,
+    items: [
+      { q: "Hva koster en nettside?", a: "Det avhenger av hvor mange sider og funksjoner du trenger. Etter en kort prat får du et skriftlig tilbud, så du vet prisen før vi starter." },
+      { q: "Hvor lang tid tar det?", a: "Det avhenger av omfanget. Du får en tidsplan sammen med tilbudet, og jeg sier fra tidlig hvis noe endrer seg." },
+      { q: "Kan jeg oppdatere innholdet selv?", a: "Ja, hvis du ønsker det. Jeg kan lage et enkelt adminområde, slik Mangfoldshuset har, eller vise deg hvordan du bruker verktøyet vi velger." },
+      { q: "Hvem eier nettsiden og domenet?", a: "Det gjør du. Domenet registreres i ditt navn, og du får tilgang til koden og kontoene nettsiden kjører på." },
+      { q: "Hjelper du etter lansering?", a: "Ja. Jeg kan ta oppdateringer, feilrettinger og små endringer etter lansering, etter avtale." },
+      { q: "Er nettsiden tilgjengelig og trygg?", a: "Jeg tester på mobil, med tastatur og med automatiske tilgjengelighetssjekker (axe), og jeg behandler skjemadata etter europeiske personvernregler (GDPR)." },
+      { q: "Jobber du bare med kunder i Norge?", a: "Nei. Jeg holder til i Bergen og møter gjerne kunder her, men jeg jobber også digitalt med kunder i andre land, på norsk, engelsk eller tyrkisk." },
+    ],
   },
   approach: {
     title: ["Slik ", "tenker", " jeg gjennom et prosjekt"] as Accent,
