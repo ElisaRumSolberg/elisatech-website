@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { Bodoni_Moda, Figtree, JetBrains_Mono } from "next/font/google";
 import { SITE_URL, alternates, type Lang } from "../i18n/config";
 import { getDict } from "../i18n";
@@ -89,10 +89,7 @@ export function RootShell({ lang, children }: { lang: Lang; children: React.Reac
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(lang)) }} />
         {children}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-JBR4458X7Q" strategy="afterInteractive" />
-        <Script id="ga" strategy="afterInteractive">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JBR4458X7Q');`}
-        </Script>
+        <Analytics />
       </body>
     </html>
   );
