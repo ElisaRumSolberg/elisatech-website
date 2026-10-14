@@ -6,7 +6,7 @@ export const en = {
     homeTitle: "Elisa Rumeysa Solberg — Elisa Studio | Websites, software and AI in Bergen",
     homeDescription:
       "Portfolio and web studio of Elisa Rumeysa Solberg, Computer Engineering student in Bergen. Websites, software and AI systems, with real projects and a direct line for new work.",
-    ogDescription: "Thoughtful technology, beautifully built. Websites, software and AI systems from Bergen.",
+    ogDescription: "Soft in appearance. Strong in engineering. Websites, software and AI systems from Bergen.",
     ogLocale: "en_GB",
     jobTitle: "Computer Engineering student",
   },
@@ -17,7 +17,7 @@ export const en = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     language: "Language",
-    tagline: "Thoughtful technology, beautifully built.",
+    tagline: "Soft in appearance. Strong in engineering.",
     copyright: "© 2026 Elisa Rumeysa Solberg · Bergen",
   },
   nav: { work: "Work", studio: "Studio", about: "About", cta: "Let's talk" },

@@ -5,7 +5,7 @@ export const nb: Dict = {
     homeTitle: "Elisa Rumeysa Solberg — Elisa Studio | Nettsider, programvare og AI i Bergen",
     homeDescription:
       "Portefølje og webstudio for Elisa Rumeysa Solberg, dataingeniørstudent i Bergen. Nettsider, programvare og AI-systemer, med ekte prosjekter og en direkte linje for nye oppdrag.",
-    ogDescription: "Gjennomtenkt teknologi, vakkert bygget. Nettsider, programvare og AI-systemer fra Bergen.",
+    ogDescription: "Myk i formen. Solid i koden. Nettsider, programvare og AI-systemer fra Bergen.",
     ogLocale: "nb_NO",
     jobTitle: "Dataingeniørstudent",
   },
@@ -16,7 +16,7 @@ export const nb: Dict = {
     openMenu: "Åpne meny",
     closeMenu: "Lukk meny",
     language: "Språk",
-    tagline: "Gjennomtenkt teknologi, vakkert bygget.",
+    tagline: "Myk i formen. Solid i koden.",
     copyright: "© 2026 Elisa Rumeysa Solberg · Bergen",
   },
   nav: { work: "Prosjekter", studio: "Studio", about: "Om meg", cta: "Ta kontakt" },
