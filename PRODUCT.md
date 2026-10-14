@@ -18,7 +18,7 @@ Visitors will also arrive from the developer credit in the Mangfoldshuset Vestla
 ## Product Purpose
 Personal software engineering portfolio and small digital studio for Elisa Rumeysa Solberg, Computer Engineering student at HVL in Bergen. It replaces the former ElisaTech agency landing page. Success: within seconds a visitor knows who Elisa is, what she builds and how to contact her; recruiters can open honest, detailed project pages; potential clients find a live, genuine website project and a clear web development offer.
 
-Direction (confirmed 2026-10-14): Elisa may later register an ENK (Norwegian sole proprietorship) and use this site to sell website and software work. Treat the site as a small business site first, with the portfolio as proof. Do not publish her CV on the site. Org.nr, VAT status and business terms are not decided yet; never show them until she provides them.
+Direction (confirmed 2026-10-14): Elisa may later register an ENK (Norwegian sole proprietorship) and use this site to sell website and software work. Treat the site as a small business site first, with the portfolio as proof. Do not publish her CV on the site. Clients can be in Norway or abroad (confirmed 2026-10-14); never phrase the offer as Norway-only. Org.nr, VAT status and business terms are not decided yet; never show them until she provides them.
 
 Commissions are a first-class path (confirmed 2026-10-09): anyone who wants a website, software or AI automation built must be able to reach Elisa easily from anywhere on the page. No prices are published.
 
