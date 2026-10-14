@@ -25,15 +25,16 @@ Builds AI systems where code makes the decisions and the model is constrained (d
 
 ## Capabilities and Constraints
 - Next.js 16 (App Router, TypeScript, Tailwind v4) on git branch `portfolio`, replacing the old static `index.html`. The old site stays on `main`; the user's uncommitted FAQ work is in `git stash` ("business-site FAQ section").
-- Hosting: Vercel (repo homepage elisatech-website.vercel.app); domain elisatech.io.
+- Hosting: Vercel. Primary domain https://www.elisastudio.no (Domeneshop, registered to Elisa 2026-10-09); elisastudio.no redirects to www; elisatech.io is the old domain and should redirect to elisastudio.no.
+- Languages: Norwegian (nb) at /, English at /en, with hreflang alternates.
 - Contact form posts to Formspree (`https://formspree.io/f/xlgaggyk`). Google Analytics G-JBR4458X7Q was on the old site.
-- English first. Norwegian (nb) and Turkish later; never ship untranslated placeholders; the language switcher appears only when translations exist.
+- Norwegian and English are live; Turkish is not planned for now. Never ship untranslated placeholders.
 - Planned routes (later phases): /projects, /projects/[slug], /about, /studio, /notes, /contact, /resume.
 - The user commits and merges herself.
 
 ## Brand Commitments
 - Source-of-truth brief: `Downloads/ELISA_STUDIO_PROJECT_PLAN.md` (user-supplied 2026-10-09), adopted together with Claude's additions (extra projects, alternative typefaces), confirmed by the user.
-- Working public name "Elisa Studio", wordmark `elisa.` with secondary `studio`. Domain stays elisatech.io for now. The old ElisaTech orbit logo is retired.
+- Working public name "Elisa Studio", wordmark `elisa.` with secondary `studio`. Domain elisastudio.no (from 2026-10-14). The old ElisaTech orbit logo is retired.
 - Brand promise: "Thoughtful technology, beautifully built." Guiding line: "Soft in appearance. Strong in engineering."
 - Voice: warm, direct, confident, precise, approachable. No "senior engineer" claims, invented testimonials or unevidenced metrics.
 - Email hello@elisatech.io. GitHub github.com/ElisaRumSolberg. LinkedIn and CV not provided yet; do not invent.
