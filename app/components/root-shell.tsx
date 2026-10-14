@@ -77,7 +77,7 @@ function structuredData(lang: Lang) {
         affiliation: { "@type": "CollegeOrUniversity", name: "Høgskulen på Vestlandet (HVL)" },
         address: { "@type": "PostalAddress", addressLocality: "Bergen", addressCountry: "NO" },
         knowsLanguage: ["nb", "en", "tr"],
-        sameAs: ["https://github.com/ElisaRumSolberg"],
+        sameAs: ["https://github.com/ElisaRumSolberg", "https://www.linkedin.com/in/elisa-rumeysa-solberg-a36bb3323/"],
       },
     ],
   };
