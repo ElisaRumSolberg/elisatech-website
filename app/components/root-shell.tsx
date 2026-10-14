@@ -63,7 +63,7 @@ function structuredData(lang: Lang) {
         "@id": `${SITE_URL}/#website`,
         url: `${SITE_URL}/`,
         name: "Elisa Studio",
-        alternateName: ["ElisaTech", "elisatech.io"],
+        alternateName: ["ElisaTech", "elisatech.io", "elisastudio.no"],
         inLanguage: ["nb", "en"],
         author: { "@id": `${SITE_URL}/#elisa` },
       },

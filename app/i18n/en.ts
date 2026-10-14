@@ -3,7 +3,7 @@ export type Accent = [string, string, string?];
 
 export const en = {
   meta: {
-    homeTitle: "Elisa Rumeysa Solberg — Elisa Studio | elisatech.io",
+    homeTitle: "Elisa Rumeysa Solberg — Elisa Studio | Websites, software and AI in Bergen",
     homeDescription:
       "Portfolio and web studio of Elisa Rumeysa Solberg, Computer Engineering student in Bergen. Websites, software and AI systems, with real projects and a direct line for new work.",
     ogDescription: "Thoughtful technology, beautifully built. Websites, software and AI systems from Bergen.",

@@ -1,4 +1,4 @@
-export const SITE_URL = "https://elisatech.io";
+export const SITE_URL = "https://www.elisastudio.no";
 
 export type Lang = "nb" | "en";
 export const langs: Lang[] = ["nb", "en"];
