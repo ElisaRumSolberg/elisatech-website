@@ -135,8 +135,12 @@ export const nb: Dict = {
   },
   about: {
     title: ["Hei, jeg er ", "Elisa"] as Accent,
-    p1: "Jeg studerer dataingeniørfag ved HVL i Bergen. Jeg trekkes mot problemer der programvaren må være nøye: offentlige brev, personlig trygghet, systemer som handler på egen hånd. Og jeg liker å lage ting som er gode å bruke.",
-    p2: "Jeg snakker norsk, engelsk og tyrkisk, og jeg bygger for folk på alle tre språkene. Det meste jeg kan, har jeg lært ved å lansere noe, teste det som om noen ville knekke det, og skrive ned det som overrasket meg.",
+    paragraphs: [
+      "Før jeg skrev kode, underviste jeg. Jeg var lærer i Tyrkia fra 2014 til 2019, og jeg mener fortsatt at god programvare skal forklare seg selv like tålmodig som en god lærer.",
+      "I Norge ble jeg frivillig mentor for barn og unge i Mangfoldhuset Bergen i 2022, tok en utdanning i fullstack webutvikling i 2024 og begynte på dataingeniørstudiet ved HVL i Bergen i 2025. I dag er jeg også studentassistent i DAT100, DAT111, MAT101 og ING100.",
+      "Jeg trekkes mot problemer der programvaren må være nøye: offentlige brev, personlig trygghet, systemer som handler på egen hånd. Jeg snakker norsk, engelsk og tyrkisk, og jeg bygger for folk på alle tre språkene.",
+    ],
+    linkedin: "LinkedIn-profil",
     stackTitle: "Verktøy jeg har brukt i disse prosjektene",
     stack: [
       { group: "Språk", items: ["TypeScript", "Python", "Dart", "SQL"] },
@@ -150,6 +154,7 @@ export const nb: Dict = {
     title: ["Har du noe fint i tankene? ", "La oss bygge det med omtanke."] as Accent,
     lede: "En nettside, et verktøy, en praksisplass eller bare et spørsmål: skriv noen linjer, så svarer jeg deg.",
     email: "E-post",
+    linkedin: "LinkedIn",
     basedIn: "Holder til i",
     place: "Bergen, Norge",
   },

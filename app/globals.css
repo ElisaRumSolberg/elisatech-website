@@ -424,3 +424,6 @@ section > * { max-width: var(--max); margin-inline: auto; }
 /* 404 */
 .not-found { min-height: 100svh; display: grid; align-content: center; gap: 1.25rem; padding: 3rem var(--gutter); max-width: 48rem; margin-inline: auto; }
 .not-found .wordmark { margin-bottom: 2rem; }
+
+/* About links */
+.about-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }

@@ -137,8 +137,12 @@ export const en = {
   },
   about: {
     title: ["Hi, I'm ", "Elisa"] as Accent,
-    p1: "I study Computer Engineering at HVL in Bergen. I'm drawn to problems where software has to be careful: official letters, personal safety, systems that act on their own. And I like making things that feel good to use.",
-    p2: "I speak Norwegian, English and Turkish, and I build for people in all three. Most of what I know I learned by shipping something, testing it like someone wants it to break, and writing down what surprised me.",
+    paragraphs: [
+      "Before I wrote code, I taught. I was a teacher in Turkey from 2014 to 2019, and I still believe good software should explain itself as patiently as a good teacher does.",
+      "In Norway I became a volunteer mentor for children and young people at Mangfoldhuset Bergen in 2022, took a full-stack web development course in 2024, and started my Computer Engineering degree at HVL in Bergen in 2025. Today I'm also a student assistant in DAT100, DAT111, MAT101 and ING100.",
+      "I'm drawn to problems where software has to be careful: official letters, personal safety, systems that act on their own. I speak Norwegian, English and Turkish, and I build for people in all three.",
+    ],
+    linkedin: "LinkedIn profile",
     stackTitle: "Tools I've used in these projects",
     stack: [
       { group: "Languages", items: ["TypeScript", "Python", "Dart", "SQL"] },
@@ -152,6 +156,7 @@ export const en = {
     title: ["Have something lovely in mind? ", "Let's build it thoughtfully."] as Accent,
     lede: "A website, a tool, an internship or just a question: write a few lines and I'll get back to you.",
     email: "Email",
+    linkedin: "LinkedIn",
     basedIn: "Based in",
     place: "Bergen, Norway",
   },

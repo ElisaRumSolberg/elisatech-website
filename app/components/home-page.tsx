@@ -24,6 +24,8 @@ const icons = [
   </svg>,
 ];
 
+const LINKEDIN_URL = "https://www.linkedin.com/in/elisa-rumeysa-solberg-a36bb3323/";
+
 const delay = (i: number, key = "--i") => ({ [key]: i }) as React.CSSProperties;
 
 export function HomePage({ lang }: { lang: Lang }) {
@@ -191,8 +193,12 @@ export function HomePage({ lang }: { lang: Lang }) {
         <section id="about" className="about" aria-labelledby="about-title">
           <div className="about-copy" data-reveal>
             <h2 id="about-title" className="section-title"><A t={d.about.title} /></h2>
-            <p>{d.about.p1}</p>
-            <p>{d.about.p2}</p>
+            {d.about.paragraphs.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+            <div className="about-links">
+              <External href={LINKEDIN_URL} newTab={nt}>{d.about.linkedin}</External>
+            </div>
           </div>
           <div className="stack-groups" data-reveal>
             <h3 className="sub-title">{d.about.stackTitle}</h3>
@@ -223,6 +229,10 @@ export function HomePage({ lang }: { lang: Lang }) {
               <li>
                 <span>GitHub</span>
                 <External href="https://github.com/ElisaRumSolberg" newTab={nt}>ElisaRumSolberg</External>
+              </li>
+              <li>
+                <span>{d.contact.linkedin}</span>
+                <External href={LINKEDIN_URL} newTab={nt}>elisa-rumeysa-solberg</External>
               </li>
               <li>
                 <span>{d.contact.basedIn}</span>
