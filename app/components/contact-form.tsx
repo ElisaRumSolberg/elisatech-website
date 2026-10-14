@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import type { Dict } from "../i18n";
 
 type State = "idle" | "sending" | "sent" | "error" | "invalid";
 
-export function ContactForm({ t, lang }: { t: Dict["form"]; lang: string }) {
+export function ContactForm({ t, lang, privacyHref, privacyLabel }: { t: Dict["form"]; lang: string; privacyHref: string; privacyLabel: string }) {
   const [state, setState] = useState<State>("idle");
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -56,7 +57,9 @@ export function ContactForm({ t, lang }: { t: Dict["form"]; lang: string }) {
       </label>
       <input type="hidden" name="language" value={lang} />
       <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="honeypot" aria-hidden="true" />
-      <p className="privacy">{t.privacy}</p>
+      <p className="privacy">
+        {t.privacy} <Link href={privacyHref}>{privacyLabel}</Link>
+      </p>
       <div className="form-end">
         <button type="submit" className="btn btn-primary" disabled={state === "sending"}>
           {state === "sending" ? t.sending : t.send}

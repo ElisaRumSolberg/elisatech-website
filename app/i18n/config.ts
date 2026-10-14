@@ -3,16 +3,23 @@ export const SITE_URL = "https://www.elisastudio.no";
 export type Lang = "nb" | "en";
 export const langs: Lang[] = ["nb", "en"];
 
-/** Norwegian lives at the root, English under /en. */
+/** Pages whose English slug differs from the Norwegian one (keyed by the Norwegian path). */
+const enSlugs: Record<string, string> = {
+  "/personvern": "/privacy",
+};
+
+/** Norwegian lives at the root, English under /en. `path` is always the Norwegian path. */
 export function href(lang: Lang, path: string) {
   if (lang === "nb") return path;
   if (path === "/") return "/en";
-  return `/en${path}`;
+  return `/en${enSlugs[path] ?? path}`;
 }
 
 /** The same page in the other language. */
 export function switchPath(pathname: string, to: Lang) {
-  const bare = pathname === "/en" ? "/" : pathname.startsWith("/en/") ? pathname.slice(3) : pathname;
+  let bare = pathname === "/en" ? "/" : pathname.startsWith("/en/") ? pathname.slice(3) : pathname;
+  const nbPath = Object.keys(enSlugs).find((k) => enSlugs[k] === bare);
+  if (nbPath) bare = nbPath;
   return href(to, bare);
 }
 

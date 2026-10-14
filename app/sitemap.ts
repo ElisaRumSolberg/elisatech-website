@@ -4,6 +4,7 @@ import { alternates, langs } from "./i18n/config";
 const pages = [
   { path: "/", priority: 1 },
   { path: "/projects/mangfoldshuset-vestland", priority: 0.8 },
+  { path: "/personvern", priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

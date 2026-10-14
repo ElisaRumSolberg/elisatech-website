@@ -243,5 +243,21 @@ export const nb: Dict = {
     ctaPrimary: "Fortell meg om prosjektet ditt",
     ctaSecondary: "Se flere prosjekter",
   },
+  privacy: {
+    metaTitle: "Personvernerklæring | Elisa Studio",
+    metaDescription: "Slik behandler Elisa Studio personopplysninger fra kontaktskjemaet, driften av nettsiden og besøksstatistikk.",
+    title: ["Om ", "personvern"] as Accent,
+    updated: "Sist oppdatert 14. oktober 2026",
+    intro: "Denne siden forklarer hvilke personopplysninger elisastudio.no behandler, hvorfor, og hvilke rettigheter du har. Den er kort fordi nettsiden samler inn svært lite.",
+    sections: [
+      { h: "Hvem som er ansvarlig", p: ["Elisa Rumeysa Solberg (Elisa Studio), Bergen, er behandlingsansvarlig for personopplysningene som beskrives her. Du når meg på hello@elisatech.io."] },
+      { h: "Kontaktskjemaet", p: ["Når du sender kontaktskjemaet, mottar jeg navnet ditt, e-postadressen din, hva henvendelsen gjelder, meldingen og hvilken språkversjon av nettsiden du brukte.", "Jeg bruker dette bare til å svare deg og, hvis vi blir enige om et samarbeid, til å planlegge og gjennomføre oppdraget. Behandlingsgrunnlaget er tiltak før en mulig avtale (personvernforordningen artikkel 6 nr. 1 bokstav b) eller, for andre henvendelser, min berettigede interesse i å svare på meldinger som sendes til meg (artikkel 6 nr. 1 bokstav f).", "Meldingene leveres gjennom Formspree, Inc. (USA), som lagrer dem på mine vegne. Jeg sletter henvendelser når de ikke lenger trengs, og senest 12 måneder etter siste kontakt hvis de ikke fører til et oppdrag."] },
+      { h: "Drift og besøksstatistikk", p: ["Nettsiden driftes av Vercel Inc. (USA). Som alle nettservere behandler den kortvarig tekniske opplysninger som IP-adressen din for å levere sidene og beskytte tjenesten.", "Jeg bruker Vercel Web Analytics til å telle sidevisninger. Det fungerer uten informasjonskapsler (cookies) og lagrer ikke hvem du er. Nettsiden bruker ingen informasjonskapsler til sporing eller reklame."] },
+      { h: "Lenker til andre nettsider", p: ["Nettsiden lenker til GitHub, LinkedIn, YouTube og live-demoer av prosjektene mine. Disse nettsidene har egne personvernerklæringer, som gjelder når du besøker dem."] },
+      { h: "Dine rettigheter", p: ["Du kan be om innsyn i opplysningene jeg har om deg, få dem rettet eller slettet, eller protestere mot hvordan de brukes. Skriv til hello@elisatech.io, så svarer jeg innen 30 dager.", "Hvis du mener at jeg behandler opplysningene dine i strid med regelverket, kan du klage til Datatilsynet på datatilsynet.no."] },
+    ],
+    link: "Personvern",
+    formNote: "Les personvernerklæringen",
+  },
   notFound: { title: "Denne siden finnes ikke", text: "Lenken kan være gammel, eller siden er flyttet.", home: "Gå til forsiden" },
 };

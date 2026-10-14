@@ -137,7 +137,7 @@ export function MangfoldshusetCase({ lang }: { lang: Lang }) {
           </div>
         </section>
       </main>
-      <Footer tagline={d.common.tagline} copyright={d.common.copyright} />
+      <Footer lang={lang} tagline={d.common.tagline} copyright={d.common.copyright} privacy={d.privacy.link} />
     </>
   );
 }

@@ -241,12 +241,12 @@ export function HomePage({ lang }: { lang: Lang }) {
             </ul>
           </div>
           <div data-reveal>
-            <ContactForm t={d.form} lang={lang} />
+            <ContactForm t={d.form} lang={lang} privacyHref={href(lang, "/personvern")} privacyLabel={d.privacy.formNote} />
           </div>
         </section>
       </main>
 
-      <Footer tagline={d.common.tagline} copyright={d.common.copyright} />
+      <Footer lang={lang} tagline={d.common.tagline} copyright={d.common.copyright} privacy={d.privacy.link} />
     </>
   );
 }

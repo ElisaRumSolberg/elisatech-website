@@ -427,3 +427,13 @@ section > * { max-width: var(--max); margin-inline: auto; }
 
 /* About links */
 .about-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
+
+/* Legal pages */
+.legal-updated { margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted); }
+.legal-body { max-width: calc(46rem + var(--gutter) * 2); margin-inline: auto; padding: clamp(2.5rem, 5vw, 4rem) var(--gutter) clamp(4rem, 8vw, 6rem); display: grid; gap: 2.25rem; }
+.legal-body h2 { font-family: var(--font-display), serif; font-weight: 400; font-size: clamp(1.6rem, 2.6vw, 2rem); letter-spacing: -0.02em; line-height: 1.15; }
+.legal-body p { margin-top: 0.75rem; max-width: 65ch; }
+.privacy a { color: var(--plum); font-weight: 600; }
+.footer-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+.footer-meta a { text-decoration: none; }
+.footer-meta a:hover { color: var(--plum); text-decoration: underline; }

@@ -245,6 +245,22 @@ export const en = {
     ctaPrimary: "Tell me about your project",
     ctaSecondary: "See my other work",
   },
+  privacy: {
+    metaTitle: "Privacy policy | Elisa Studio",
+    metaDescription: "How Elisa Studio handles personal data from the contact form, website hosting and visitor statistics.",
+    title: ["Privacy ", "policy"] as Accent,
+    updated: "Last updated 14 October 2026",
+    intro: "This page explains what personal data elisastudio.no handles, why, and what rights you have. I keep it short because the site collects very little.",
+    sections: [
+      { h: "Who is responsible", p: ["Elisa Rumeysa Solberg (Elisa Studio), Bergen, Norway, is responsible for the personal data described here. You can reach me at hello@elisatech.io."] },
+      { h: "The contact form", p: ["When you send the contact form, I receive your name, email address, what your enquiry is about, your message and which language version of the site you used.", "I use this only to reply to you and, if we agree to work together, to plan and carry out the work. The legal basis is taking steps before a possible agreement (GDPR article 6 (1) b) or, for other enquiries, my legitimate interest in answering messages sent to me (article 6 (1) f).", "Messages are delivered through Formspree, Inc. (USA), which stores them on my behalf. I delete enquiries when they are no longer needed, and at the latest 12 months after the last contact if they do not lead to an assignment."] },
+      { h: "Hosting and visitor statistics", p: ["The site is hosted by Vercel Inc. (USA). Like any web server, it briefly processes technical data such as your IP address to deliver pages and protect the service.", "I use Vercel Web Analytics to count page views. It works without cookies and does not store who you are. The site sets no cookies for tracking or advertising."] },
+      { h: "Links to other sites", p: ["The site links to GitHub, LinkedIn, YouTube and live demos of my projects. These sites have their own privacy policies, which apply when you visit them."] },
+      { h: "Your rights", p: ["You can ask to see the data I have about you, have it corrected or deleted, or object to how it is used. Write to hello@elisatech.io and I will answer within 30 days.", "If you believe I handle your data unlawfully, you can complain to the Norwegian Data Protection Authority (Datatilsynet) at datatilsynet.no."] },
+    ],
+    link: "Privacy policy",
+    formNote: "Read the privacy policy",
+  },
   notFound: { title: "This page doesn't exist", text: "The link may be old, or the page has moved.", home: "Go to the front page" },
 };
 
